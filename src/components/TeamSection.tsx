@@ -18,31 +18,31 @@ const teamMembers = [
     name: "Samaroha Bhattacharyya",
     role: "Lead Developer",
     expertise: "Full-stack developer specializing in mobile and web development. Proficient in React Native, React, TypeScript, JavaScript, and Node.js. Builds scalable applications for disaster management and emergency response systems.",
-    image: samarohaImg
+    image: tejasImg
   },
   {
     name: "Sharanyo Chakraborty",
     role: "Marketing Head",
     expertise: "Leads strategic marketing initiatives and community outreach programs. Develops campaigns to increase awareness about disaster preparedness and promotes innovative solutions in emergency management.",
-    image: sharanyoImg
+    image: abhinavaImg
   },
   {
     name: "Abhinava Bandopadhyay",
     role: "Electronics Engineer",
     expertise: "Specializes in circuit design and electronic system integration. Expert in creating robust circuitry solutions for disaster response equipment, focusing on reliability and efficiency in critical situations.",
-    image: abhinavaImg
+    image: sharanyoImg
   },
   {
     name: "Tejas Singh",
     role: "Electronics Specialist",
     expertise: "Skilled in electronics design and implementation, with a focus on power systems and signal processing. Develops electronic components for emergency communication devices and sensor networks.",
-    image: tejasImg
+    image: samarohaImg
   },
   {
     name: "Ayushman Singh",
     role: "3D Printing Specialist",
     expertise: "Expert in additive manufacturing and rapid prototyping. Creates custom 3D-printed components for disaster response tools and equipment, enabling quick iteration and deployment of innovative solutions.",
-    image: ayushmanImg
+    image: "https://via.placeholder.com/400x500/1a1a1a/666666?text=A.S."
   }
 ];
 
