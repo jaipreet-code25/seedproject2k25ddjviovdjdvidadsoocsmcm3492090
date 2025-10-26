@@ -6,10 +6,11 @@ interface TeamMemberProps {
   name: string;
   role: string;
   expertise: string;
+  image: string;
   index: number;
 }
 
-const TeamMember = ({ name, role, expertise, index }: TeamMemberProps) => {
+const TeamMember = ({ name, role, expertise, image, index }: TeamMemberProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(cardRef, { once: true, margin: "-100px" });
 
@@ -29,34 +30,18 @@ const TeamMember = ({ name, role, expertise, index }: TeamMemberProps) => {
         whileTap={{ scale: 0.98 }}
         style={{ perspective: "1000px" }}
       >
-        <Card className="card-glass hover:border-primary/50 transition-all duration-300 h-full group">
-          <CardHeader className="space-y-4">
-            {/* 
-              ⚠️ IMAGE PLACEHOLDER - ADD YOUR TEAM MEMBER PHOTO HERE ⚠️
-              Replace the div below with an <img> tag:
-              
-              <img 
-                src="/path/to/your/image.jpg" 
-                alt={name}
-                className="w-32 h-32 rounded-full mx-auto object-cover border-2 border-primary/50 group-hover:border-primary transition-colors"
-              />
-              
-              Recommended: 
-              - Square images (1:1 aspect ratio)
-              - At least 300x300px resolution
-              - Place images in public/images/ folder
-              - Or use src/assets/ with import statements
-            */}
-            <motion.div 
-              className="w-32 h-32 rounded-full mx-auto bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center border-2 border-primary/50 group-hover:border-primary transition-colors"
-              whileHover={{ rotate: 5, scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <span className="text-4xl font-bold text-primary">
-                {name.split(' ').map(n => n[0]).join('')}
-              </span>
-            </motion.div>
-            
+        <Card className="card-glass hover:border-primary/50 transition-all duration-300 h-full group overflow-hidden">
+          <div className="relative h-64 md:h-80 overflow-hidden">
+            <motion.img 
+              src={image} 
+              alt={name}
+              className="w-full h-full object-cover object-top"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+            />
+          </div>
+          
+          <CardHeader className="space-y-2">
             <div className="text-center">
               <CardTitle className="text-2xl mb-2">{name}</CardTitle>
               <CardDescription className="text-primary font-semibold">
