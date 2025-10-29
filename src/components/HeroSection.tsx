@@ -79,7 +79,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="inline-block text-[#ff6b35] text-glow"
+            className="inline-block text-[#ff8c42] text-glow"
           >
             innovation
           </motion.span>
