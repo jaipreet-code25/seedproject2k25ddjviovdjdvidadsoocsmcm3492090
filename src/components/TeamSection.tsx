@@ -6,7 +6,7 @@ import sharanyoImg from "@/assets/sharanyo.jpg";
 import abhinavaImg from "@/assets/abhinava.jpg";
 import tejasImg from "@/assets/tejas.jpg";
 import ayushmanImg from "@/assets/ayushman.jpg";
-
+import a1 from "@/assets/ayushman1.jpg";
 const teamMembers = [
   {
     name: "Jaipreet Purkayastha",
