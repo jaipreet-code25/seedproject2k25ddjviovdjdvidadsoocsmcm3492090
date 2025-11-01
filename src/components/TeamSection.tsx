@@ -5,13 +5,13 @@ import samarohaImg from "@/assets/samaroha.jpg";
 import sharanyoImg from "@/assets/sharanyo.jpg";
 import abhinavaImg from "@/assets/abhinava.jpg";
 import tejasImg from "@/assets/tejas.jpg";
-import ayushmanImg from "@/assets/ayushman.jpg";
-import a1 from "@/assets/ayushman1.jpg";
+import ayushmanImg from "@/assets/ahun.jpg";
+
 const teamMembers = [
   {
     name: "Jaipreet Purkayastha",
     role: "Co-Head of STEM (Technology)",
-    expertise: "Expert in microcontroller programming and hardware integration, specializing in Arduino and ESP32 platforms. Skilled in designing and implementing embedded systems for robotics and autonomous vehicles.",
+    expertise: "Proficient in Arduino, ESP32, and embedded systems; strong in Python, Java, and C. Web app developer experienced with diverse modules and integrations.",
     image: jaipreetImg
   },
   {
@@ -23,7 +23,7 @@ const teamMembers = [
   {
     name: "Sharanyo Chakraborty",
     role: "Chief Marketing Officer",
-    expertise: "Leads strategic marketing initiatives and community outreach programs. Develops campaigns to increase awareness and promotes innovative solutions across various domains.",
+    expertise: "Expert in Mass Communication. Graphic Designer and Video Editor. Master of advertising and social media advertisement and management.",
     image: abhinavaImg
   },
   {
@@ -41,8 +41,8 @@ const teamMembers = [
   {
     name: "Ayushman Singh",
     role: "Lead 3D Designer",
-    expertise: "Expert in additive manufacturing and rapid prototyping. Creates custom 3D-printed components and designs, enabling quick iteration and deployment of innovative solutions.",
-    image: a1
+    expertise: "Thorough experience in 3D design and 3D printing with extensive knowledge of additive production and mechanical linkages. Creates custom 3D-printed components and designs for rapid prototyping and innovative solutions.",
+    image: ""
   }
 ];
 
