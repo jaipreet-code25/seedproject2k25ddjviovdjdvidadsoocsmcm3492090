@@ -10,37 +10,37 @@ import ai from "@/assets/ayushman1.jpg";
 const teamMembers = [
   {
     name: "Jaipreet Purkayastha",
-    role: "Co-Head of STEM (Technology)",
+    role: "Joint Head of STEM (Technology)",
     expertise: "Proficient in Arduino, ESP32, and embedded systems; strong in Python, Java, and C. Web app developer experienced with diverse modules and integrations.",
     image: jaipreetImg
   },
   {
     name: "Samaroha Bhattacharyya",
-    role: "Chief Software Engineer",
+    role: "Head of Web Design",
     expertise: "Full-stack developer specializing in mobile and web development. Proficient in React Native, React, TypeScript, JavaScript, and Node.js. Builds scalable applications with cutting-edge technologies.",
     image: tejasImg
   },
   {
     name: "Sharanyo Chakraborty",
-    role: "Chief Marketing Officer",
+    role: "Head of Marketing",
     expertise: "Expert in Mass Communication. Graphic Designer and Video Editor. Master of advertising and social media advertisement and management.",
     image: abhinavaImg
   },
   {
     name: "Abhinava Bandopadhyay",
-    role: "Head Of Product Design",
+    role: "Joint Head of 3D Design",
     expertise: "Experienced in ideation workflows with thorough knowledge of real-world problems. Perfect project pitching skills and robust expertise in robotics.",
     image: sharanyoImg
   },
   {
     name: "Tejas Singh",
-    role: "Co-head of STEM (Mechanics)",
+    role: "Joint Head of STEM (Mechanics)",
     expertise: "Skilled in mechanical design and implementation, with a focus on power systems and engineering solutions. Develops innovative mechanical components and systems.",
     image: samarohaImg
   },
   {
     name: "Ayushman Singh",
-    role: "Lead 3D Designer",
+    role: "Joint Head of 3D Design",
     expertise: "Thorough experience in 3D design and 3D printing with extensive knowledge of additive production and mechanical linkages. Creates custom 3D-printed components and designs for rapid prototyping and innovative solutions.",
     image: ai
   }
