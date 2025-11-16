@@ -43,7 +43,7 @@ const Navbar = () => {
             onClick={() => scrollToSection("home")}
             className="text-2xl font-bold hover:opacity-80 transition-opacity"
           >
-            AeturnumX<span style={{ color: "#ff6600" }}>.</span>
+            Happy Drains Solutions
           </button>
 
           {/* Desktop Menu */}

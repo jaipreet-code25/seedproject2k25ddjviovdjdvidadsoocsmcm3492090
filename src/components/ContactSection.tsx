@@ -10,19 +10,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "contact@aeturnumx.com",
-    href: "mailto:contact@aeturnumx.com",
+    value: "info@happydrains.com",
+    href: "mailto:info@happydrains.com",
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+91 XXXXX XXXXX",
-    href: "tel:+91XXXXXXXXXX",
+    value: "24/7 Emergency Line",
+    href: "tel:+44XXXXXXXXXX",
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "India",
+    value: "Serving Your Area",
     href: "#",
   },
 ];
@@ -61,10 +61,10 @@ const ContactSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Get In <span style={{ color: "#ff6600" }}>Touch</span>
+            Get In <span className="text-primary">Touch</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind or want to collaborate? We'd love to hear from you!
+            Need drainage help? Contact us for fast, friendly, and professional service!
           </p>
         </motion.div>
 
@@ -137,7 +137,7 @@ const ContactSection = () => {
                   href={info.href}
                   className="flex items-start gap-4 card-glass p-6 rounded-lg hover:border-primary/50 transition-all group"
                 >
-                  <info.icon className="w-6 h-6 mt-1 group-hover:text-primary transition-colors" style={{ color: "#ff6600" }} />
+                  <info.icon className="w-6 h-6 mt-1 text-primary group-hover:text-primary/80 transition-colors" />
                   <div>
                     <div className="font-semibold mb-1">{info.label}</div>
                     <div className="text-muted-foreground">{info.value}</div>
@@ -172,7 +172,7 @@ const ContactSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-16 pt-8 border-t border-border text-center text-muted-foreground"
         >
-          <p>© 2024 AeturnumX. All rights reserved.</p>
+          <p>© 2024 Happy Drains Solutions. All rights reserved.</p>
         </motion.div>
       </div>
     </section>

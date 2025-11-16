@@ -4,24 +4,24 @@ import { Button } from "@/components/ui/button";
 
 const projects = [
   {
-    title: "Robotics Innovation",
-    description: "Advanced robotics systems integrating embedded systems, mechanical design, and intelligent automation for real-world applications.",
-    tags: ["Arduino", "ESP32", "Mechanical Design"],
+    title: "Drain Unblocking",
+    description: "Professional drain clearing services using advanced equipment to quickly resolve blockages and restore flow.",
+    tags: ["Emergency Service", "Professional", "Quick Response"],
   },
   {
-    title: "Web Solutions",
-    description: "Full-stack web applications built with modern frameworks, delivering scalable and responsive user experiences.",
-    tags: ["React", "TypeScript", "Node.js"],
+    title: "CCTV Inspections",
+    description: "State-of-the-art camera surveys to identify drainage issues and provide detailed reports for informed solutions.",
+    tags: ["Camera Survey", "Diagnostics", "Detailed Reports"],
   },
   {
-    title: "3D Design & Prototyping",
-    description: "Custom 3D-printed components and designs for rapid prototyping, additive production, and innovative mechanical solutions.",
-    tags: ["3D Printing", "CAD", "Prototyping"],
+    title: "Drain Repairs",
+    description: "Expert repair services for damaged drains, including patch repairs, relining, and full replacements when needed.",
+    tags: ["Repairs", "Relining", "Maintenance"],
   },
   {
-    title: "Marketing Campaigns",
-    description: "Strategic marketing initiatives leveraging graphic design, video editing, and social media management to amplify brand presence.",
-    tags: ["Design", "Social Media", "Branding"],
+    title: "Preventive Maintenance",
+    description: "Regular maintenance programs to keep your drainage system flowing smoothly and prevent costly emergencies.",
+    tags: ["Maintenance", "Prevention", "Long-term Care"],
   },
 ];
 
@@ -37,10 +37,10 @@ const ProjectsSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Our <span style={{ color: "#ff6600" }}>Projects</span>
+            Our <span className="text-primary">Services</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Explore our portfolio of innovative solutions across technology, design, and engineering
+            Comprehensive drainage solutions tailored to your needs
           </p>
         </motion.div>
 
