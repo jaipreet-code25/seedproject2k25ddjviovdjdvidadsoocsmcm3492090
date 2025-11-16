@@ -3,16 +3,6 @@ import { Rocket, Users, Lightbulb, Target } from "lucide-react";
 
 const features = [
   {
-    icon: Rocket,
-    title: "Fast Response",
-    description: "Quick emergency service available when you need us most.",
-  },
-  {
-    icon: Users,
-    title: "Expert Team",
-    description: "Skilled professionals with years of drainage experience.",
-  },
-  {
     icon: Lightbulb,
     title: "Smart Solutions",
     description: "Modern techniques and equipment for lasting results.",
@@ -24,11 +14,6 @@ const features = [
   },
 ];
 
-const stats = [
-  { value: "1000+", label: "Happy Customers" },
-  { value: "24/7", label: "Emergency Service" },
-  { value: "15+", label: "Years Experience" },
-];
 
 const AboutSection = () => {
   return (
@@ -45,8 +30,7 @@ const AboutSection = () => {
             About <span className="text-primary">Happy Drains Solutions</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We are a dedicated team of drainage professionals committed to providing reliable, 
-            efficient, and friendly service. Happy Drains Solutions represents excellence in 
+            We are a dedicated team of drainage declogging solution desginers. Happy Drains Solutions represents excellence in 
             drainage and plumbing services with a smile.
           </p>
         </motion.div>
@@ -59,14 +43,6 @@ const AboutSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="grid grid-cols-3 gap-8 mb-16 max-w-4xl mx-auto"
         >
-          {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold mb-2 text-primary">
-                {stat.value}
-              </div>
-              <div className="text-muted-foreground">{stat.label}</div>
-            </div>
-          ))}
         </motion.div>
 
         {/* Features Grid */}
