@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo1.jpg";
 
 const Navbar = () => {
@@ -28,7 +27,6 @@ const Navbar = () => {
     { label: "About", id: "about" },
     { label: "Projects", id: "projects" },
     { label: "Team", id: "team" },
-    { label: "Contact", id: "contact" },
   ];
 
   return (
@@ -59,12 +57,6 @@ const Navbar = () => {
                 {item.label}
               </button>
             ))}
-            <Button
-              onClick={() => scrollToSection("contact")}
-              className="bg-primary hover:bg-primary/90"
-            >
-              Get In Touch
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -88,14 +80,6 @@ const Navbar = () => {
                 {item.label}
               </button>
             ))}
-            <div className="px-4 pt-2">
-              <Button
-                onClick={() => scrollToSection("contact")}
-                className="w-full bg-primary hover:bg-primary/90"
-              >
-                Get In Touch
-              </Button>
-            </div>
           </div>
         )}
       </div>

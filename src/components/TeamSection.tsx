@@ -7,6 +7,7 @@ import abhinavaImg from "@/assets/abhinava.jpg";
 import tejasImg from "@/assets/tejas.jpg";
 import ayushmanImg from "@/assets/ahun.jpg";
 import ai from "@/assets/ayushman1.jpg";
+import { Github, Linkedin, Twitter } from "lucide-react";
 const teamMembers = [
   {
     name: "Jaipreet Purkayastha",
@@ -46,6 +47,12 @@ const teamMembers = [
   }
 ];
 
+const socialLinks = [
+  { label: "GitHub", href: "https://github.com/", icon: Github },
+  { label: "LinkedIn", href: "https://www.linkedin.com/", icon: Linkedin },
+  { label: "Twitter", href: "https://twitter.com/", icon: Twitter }
+];
+
 const TeamSection = () => {
   return (
     <section className="min-h-screen py-20 px-4 md:px-8 relative">
@@ -78,6 +85,28 @@ const TeamSection = () => {
               index={index}
             />
           ))}
+        </div>
+
+        <div className="mt-16 card-glass p-8 rounded-lg text-center">
+          <h3 className="text-2xl font-bold mb-4">Follow Us</h3>
+          <p className="text-muted-foreground mb-6">
+            Keep up with our latest prototypes, field deployments, and community impact stories.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-primary/10 text-primary font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"
+                aria-label={`Follow us on ${link.label}`}
+              >
+                <link.icon className="w-4 h-4" />
+                {link.label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

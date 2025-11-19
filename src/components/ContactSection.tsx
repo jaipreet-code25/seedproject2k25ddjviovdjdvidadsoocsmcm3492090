@@ -172,7 +172,7 @@ const ContactSection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-16 pt-8 border-t border-border text-center text-muted-foreground"
         >
-          <p>© 2024 Happy Drains Solutions. All rights reserved.</p>
+          <p>© 2026 Happy Drains Solutions. All rights reserved.</p>
         </motion.div>
       </div>
     </section>
