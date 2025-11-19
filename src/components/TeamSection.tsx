@@ -7,7 +7,7 @@ import abhinavaImg from "@/assets/abhinava.jpg";
 import tejasImg from "@/assets/tejas.jpg";
 import ayushmanImg from "@/assets/ahun.jpg";
 import ai from "@/assets/ayushman1.jpg";
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Instagram, Twitter } from "lucide-react";
 const teamMembers = [
   {
     name: "Jaipreet Purkayastha",
@@ -48,9 +48,9 @@ const teamMembers = [
 ];
 
 const socialLinks = [
-  { label: "GitHub", href: "https://github.com/", icon: Github },
-  { label: "LinkedIn", href: "https://www.linkedin.com/", icon: Linkedin },
-  { label: "Twitter", href: "https://twitter.com/", icon: Twitter }
+  { label: "Instagram", href: "https://www.instagram.com/", icon: Instagram },
+  { label: "Twitter", href: "https://twitter.com/", icon: Twitter },
+  { label: "GitHub", href: "https://github.com/", icon: Github }
 ];
 
 const TeamSection = () => {
