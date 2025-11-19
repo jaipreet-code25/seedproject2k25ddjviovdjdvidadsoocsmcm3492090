@@ -1,19 +1,4 @@
 import { motion } from "framer-motion";
-import { Rocket, Users, Lightbulb, Target } from "lucide-react";
-
-const features = [
-  {
-    icon: Lightbulb,
-    title: "Smart Solutions",
-    description: "Modern techniques and equipment for lasting results.",
-  },
-  {
-    icon: Target,
-    title: "Customer Focus",
-    description: "Your satisfaction is our priority, every time.",
-  },
-];
-
 
 const AboutSection = () => {
   return (
@@ -30,28 +15,11 @@ const AboutSection = () => {
             About <span className="text-primary">Happy Drains Solutions</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            We are a dedicated team of drainage declogging solution desginers. Happy Drains Solutions represents excellence in 
-            drainage and plumbing services with a smile.
+            We are a dedicated team of drainage declogging solution designers. Happy Drains Solutions represents excellence in 
+            drainage and plumbing services with a smile. Our innovative approach tackles urban waterlogging at its root, 
+            providing reliable solutions for cities and communities across India.
           </p>
         </motion.div>
-
-        {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="card-glass p-8 rounded-lg hover:border-primary/50 transition-all"
-            >
-              <feature.icon className="w-12 h-12 mb-4 text-primary" />
-              <h3 className="text-2xl font-bold mb-3">{feature.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );

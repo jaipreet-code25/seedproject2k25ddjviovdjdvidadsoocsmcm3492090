@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo1.jpg";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,9 +42,10 @@ const Navbar = () => {
           {/* Logo */}
           <button
             onClick={() => scrollToSection("home")}
-            className="text-2xl font-bold hover:opacity-80 transition-opacity"
+            className="flex items-center gap-3 hover:opacity-80 transition-opacity"
           >
-            Happy Drains Solutions
+            <img src={logo} alt="Happy Drains Solutions" className="h-12 w-auto rounded-lg" />
+            <span className="text-xl font-bold hidden md:block">Happy Drains Solutions</span>
           </button>
 
           {/* Desktop Menu */}
