@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Droplets, Shield, Wrench } from "lucide-react";
-import productViews from "@/assets/product-views.png";
+import productViews from "@/assets/Screenshot 2025-12-28 164951_o1.jpg";
 import logo from "@/assets/logo1.jpg";
 
 const ProjectsSection = () => {
