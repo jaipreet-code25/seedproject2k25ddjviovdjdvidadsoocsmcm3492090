@@ -94,7 +94,6 @@ const Index = () => {
                 <Button size="lg" className="gap-2">
                   Learn More <ArrowRight className="w-4 h-4" />
                 </Button>
-                </Button>
               </Link>
             </motion.div>
             <motion.div
