@@ -8,7 +8,6 @@ import samarohaImg from "@/assets/samaroha.jpg";
 import sharanyoImg from "@/assets/sharanyo.jpg";
 import abhinavaImg from "@/assets/abhinava.jpg";
 import tejasImg from "@/assets/tejas.jpg";
-import ayushmanImg from "@/assets/ayushman.jpg";
 import ayushman1Img from "@/assets/ayushman1.jpg";
 
 interface TeamMember {
@@ -18,13 +17,12 @@ interface TeamMember {
 }
 
 const team: TeamMember[] = [
-  { name: "Jaipreet Singh", role: "Product Design", image: jaipreetImg },
-  { name: "Samaroha Rout", role: "Operations", image: samarohaImg },
-  { name: "Sharanyo Bose", role: "Engineering", image: sharanyoImg },
-  { name: "Abhinava Narayan", role: "Research", image: abhinavaImg },
-  { name: "Tejas H A", role: "Manufacturing", image: tejasImg },
-  { name: "Ayushman Narayan", role: "Prototyping", image: ayushmanImg },
-  { name: "Ayushman Narayan", role: "Testing", image: ayushman1Img },
+  { name: "Jaipreet Purkayastha", role: "Product Design", image: jaipreetImg },
+  { name: "Samaroha Bhattacharyya", role: "Operations", image: samarohaImg },
+  { name: "Abhinava Bandopadhyay", role: "Engineering", image: abhinavaImg },
+  { name: "Sharanyo Chakraborty", role: "Research", image: sharanyoImg },
+  { name: "Ayushman Singh", role: "Manufacturing", image: ayushman1Img },
+  { name: "Tejas Singh", role: "Prototyping", image: tejasImg },
 ];
 
 const Team = () => {
