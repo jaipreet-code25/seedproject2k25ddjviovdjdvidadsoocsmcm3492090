@@ -1,28 +1,39 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Droplets, Shield, CheckCircle, Instagram, Twitter, Github } from "lucide-react";
+import { Droplets, Shield, CheckCircle, Instagram, Twitter, Wrench, Recycle } from "lucide-react";
 import productViews from "@/assets/Screenshot 2025-12-28 164951_o1.jpg";
 
-const services = [
+const productFeatures = [
   {
     icon: Droplets,
-    title: "Drain Declogging",
-    description: "Our innovative Happy Drain system prevents clogging at the source, keeping water flowing freely while trapping debris.",
-    features: ["Automatic debris collection", "Easy maintenance", "Prevents waterlogging"]
+    title: "Smart Water Flow",
+    description: "Water passes through freely while the mesh catches all debris, dust, and particles.",
+    features: ["Unobstructed water drainage", "No water pooling", "Works in heavy rain"]
   },
   {
     icon: Shield,
-    title: "Flood Prevention",
-    description: "Protect your property and neighborhood from flooding with our advanced drainage solutions.",
-    features: ["Rapid water drainage", "Storm-ready systems", "24/7 monitoring options"]
+    title: "Debris Collection Mesh",
+    description: "A durable mesh system traps leaves, dirt, and debris before they can clog your drains.",
+    features: ["Catches all sizes of debris", "Durable construction", "Long-lasting material"]
+  },
+  {
+    icon: Wrench,
+    title: "Easy DIY Maintenance",
+    description: "Simply remove the mesh compartment, empty the debris, and put it back. No tools needed.",
+    features: ["No professional help needed", "Quick 2-minute cleaning", "Reusable mesh"]
+  },
+  {
+    icon: Recycle,
+    title: "Eco-Friendly Design",
+    description: "Made with sustainable materials and designed to reduce urban flooding naturally.",
+    features: ["Recyclable components", "Reduces pollution", "Sustainable solution"]
   }
 ];
 
 const socialLinks = [
   { label: "Instagram", href: "https://www.instagram.com/happy.drain.solutions/", icon: Instagram },
   { label: "Twitter", href: "https://x.com/happy_drain", icon: Twitter },
-  { label: "GitHub", href: "https://github.com/", icon: Github },
 ];
 
 const Services = () => {
@@ -41,10 +52,10 @@ const Services = () => {
             className="text-center"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Our <span className="text-primary">Services</span>
+              The <span className="text-primary">Happy Drain</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Comprehensive drainage solutions designed to keep your community safe and dry.
+              A simple, effective device that keeps your drains clog-free with a built-in debris collection mesh.
             </p>
           </motion.div>
         </div>
@@ -60,17 +71,17 @@ const Services = () => {
             className="card-glass p-8 rounded-lg mb-16"
           >
             <h2 className="text-3xl font-bold mb-6 text-center">
-              The <span className="text-primary">Happy Drain</span> System
+              How It <span className="text-primary">Works</span>
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  The Happy Drain is a revolutionary drainage solution that solves the fundamental 
-                  problem of urban waterlogging. Our patented design allows water to flow freely 
-                  while trapping debris in an easy-to-clean compartment.
+                  The Happy Drain features a clever mesh system that sits inside your drain. 
+                  Water flows through easily, but dust, leaves, and debris get caught in the 
+                  removable mesh compartment. When it's full, just lift it out, empty it, and pop it back in!
                 </p>
                 <ul className="space-y-3">
-                  {["Prevents clogging at the source", "Easy debris collection and disposal", "Streamlines maintenance work", "Reduces flooding and waterlogging"].map((item, i) => (
+                  {["Built-in mesh catches all debris", "Removable compartment for easy cleaning", "No tools or professionals needed", "Prevents clogging and waterlogging"].map((item, i) => (
                     <li key={i} className="flex items-center gap-3">
                       <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                       <span>{item}</span>
@@ -97,26 +108,26 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-4xl font-bold text-center mb-12"
           >
-            What We <span className="text-primary">Offer</span>
+            Product <span className="text-primary">Features</span>
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {services.map((service, index) => (
+            {productFeatures.map((feature, index) => (
               <motion.div
-                key={service.title}
+                key={feature.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="card-glass p-6 rounded-lg hover:shadow-lg transition-shadow"
               >
-                <service.icon className="w-12 h-12 mb-4 text-primary" />
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-muted-foreground mb-4">{service.description}</p>
+                <feature.icon className="w-12 h-12 mb-4 text-primary" />
+                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+                <p className="text-muted-foreground mb-4">{feature.description}</p>
                 <ul className="space-y-2">
-                  {service.features.map((feature, i) => (
+                  {feature.features.map((feat, i) => (
                     <li key={i} className="flex items-center gap-2 text-sm">
                       <CheckCircle className="w-4 h-4 text-primary" />
-                      <span>{feature}</span>
+                      <span>{feat}</span>
                     </li>
                   ))}
                 </ul>

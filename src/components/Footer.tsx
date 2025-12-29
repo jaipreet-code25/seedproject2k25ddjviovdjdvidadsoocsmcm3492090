@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Instagram, Twitter, Github, Mail, MapPin, Phone, Heart } from "lucide-react";
+import { Instagram, Twitter, Mail, MapPin, Heart } from "lucide-react";
 import logo from "@/assets/logo1.jpg";
 
 const Footer = () => {
@@ -9,7 +9,6 @@ const Footer = () => {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
-    { label: "Team", href: "/team" },
     { label: "Gallery", href: "/gallery" },
     { label: "Contact", href: "/contact" },
   ];
@@ -17,7 +16,6 @@ const Footer = () => {
   const socialLinks = [
     { label: "Instagram", href: "https://www.instagram.com/happy.drain.solutions/", icon: Instagram },
     { label: "Twitter", href: "https://x.com/happy_drain", icon: Twitter },
-    { label: "GitHub", href: "https://github.com/", icon: Github },
   ];
 
   return (
@@ -66,16 +64,13 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* Product */}
           <div>
-            <h3 className="font-semibold mb-4">Services</h3>
+            <h3 className="font-semibold mb-4">Product</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Drain Declogging</li>
-              <li>Flood Prevention</li>
-              <li>Installation & Setup</li>
-              <li>Emergency Services</li>
-              <li>Commercial Solutions</li>
-              <li>Maintenance Plans</li>
+              <li>Happy Drain Device</li>
+              <li>Debris Collection Mesh</li>
+              <li>Easy DIY Installation</li>
             </ul>
           </div>
 
@@ -85,13 +80,15 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary" />
-                <a href="mailto:contact@happydrains.in" className="hover:text-primary transition-colors">
-                  contact@happydrains.in
+                <a href="mailto:happydrainsolutionsstfe@gmail.com" className="hover:text-primary transition-colors">
+                  happydrainsolutionsstfe@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-primary" />
-                <span>+91 XXXXX XXXXX</span>
+                <Instagram className="w-4 h-4 text-primary" />
+                <a href="https://www.instagram.com/happy.drain.solutions/" target="_blank" rel="noreferrer" className="hover:text-primary transition-colors">
+                  @happy.drain.solutions
+                </a>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-primary" />

@@ -4,16 +4,31 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import teamGroup from "@/assets/team-group.jpg";
 import productViews from "@/assets/Screenshot 2025-12-28 164951_o1.jpg";
 import logo from "@/assets/logo1.jpg";
-import jaipreetImg from "@/assets/jaipreet.jpg";
-import samarohaImg from "@/assets/samaroha.jpg";
-import sharanyoImg from "@/assets/sharanyo.jpg";
-import abhinavaImg from "@/assets/abhinava.jpg";
-import tejasImg from "@/assets/tejas.jpg";
-import ayushmanImg from "@/assets/ayushman.jpg";
-import ai from "@/assets/ayushman1.jpg";
+
+// Model Design images
+import modelDesign1 from "@/assets/model-design-1.png";
+import modelDesign2 from "@/assets/model-design-2.png";
+import modelDesign3 from "@/assets/model-design-3.png";
+import modelDesign4 from "@/assets/model-design-4.png";
+import modelDesign5 from "@/assets/model-design-5.png";
+import modelDesign6 from "@/assets/model-design-6.png";
+
+// Prototype images
+import prototype1 from "@/assets/prototype-1.png";
+import prototype2 from "@/assets/prototype-2.png";
+import prototype3 from "@/assets/prototype-3.png";
+import prototype4 from "@/assets/prototype-4.png";
+import prototype5 from "@/assets/prototype-5.png";
+import prototype6 from "@/assets/prototype-6.png";
+import prototype7 from "@/assets/prototype-7.png";
+
+// Blueprint images
+import blueprint1 from "@/assets/blueprint-1.png";
+import blueprint2 from "@/assets/blueprint-2.png";
+import blueprint3 from "@/assets/blueprint-3.png";
+import blueprint4 from "@/assets/blueprint-4.png";
 
 interface GalleryImage {
   src: string;
@@ -22,19 +37,32 @@ interface GalleryImage {
 }
 
 const galleryImages: GalleryImage[] = [
-  { src: teamGroup, alt: "Team Group Photo", category: "Team" },
+  // Model Design
+  { src: modelDesign1, alt: "Model Design View 1", category: "Model Design" },
+  { src: modelDesign2, alt: "Model Design View 2", category: "Model Design" },
+  { src: modelDesign3, alt: "Model Design View 3", category: "Model Design" },
+  { src: modelDesign4, alt: "Model Design View 4", category: "Model Design" },
+  { src: modelDesign5, alt: "Model Design View 5", category: "Model Design" },
+  { src: modelDesign6, alt: "Model Design View 6", category: "Model Design" },
+  // Prototype
+  { src: prototype1, alt: "Prototype View 1", category: "Prototype" },
+  { src: prototype2, alt: "Prototype View 2", category: "Prototype" },
+  { src: prototype3, alt: "Prototype View 3", category: "Prototype" },
+  { src: prototype4, alt: "Prototype View 4", category: "Prototype" },
+  { src: prototype5, alt: "Prototype View 5", category: "Prototype" },
+  { src: prototype6, alt: "Prototype View 6", category: "Prototype" },
+  { src: prototype7, alt: "Prototype View 7", category: "Prototype" },
+  // Blueprints
+  { src: blueprint1, alt: "Blueprint Design 1", category: "Blueprints" },
+  { src: blueprint2, alt: "Blueprint Design 2", category: "Blueprints" },
+  { src: blueprint3, alt: "Blueprint Design 3", category: "Blueprints" },
+  { src: blueprint4, alt: "Blueprint Design 4", category: "Blueprints" },
+  // Product & Brand
   { src: productViews, alt: "Happy Drain Product Design", category: "Product" },
   { src: logo, alt: "Happy Drains Solutions Logo", category: "Brand" },
-  { src: jaipreetImg, alt: "Jaipreet Purkayastha", category: "Team" },
-  { src: tejasImg, alt: "Samaroha Bhattacharyya", category: "Team" },
-  { src: abhinavaImg, alt: "Sharanyo Chakraborty", category: "Team" },
-  { src: sharanyoImg, alt: "Abhinava Bandopadhyay", category: "Team" },
-  { src: samarohaImg, alt: "Tejas Singh", category: "Team" },
-  { src: ai, alt: "Ayushman Singh", category: "Team" },
-  { src: ayushmanImg, alt: "Team Member", category: "Team" },
 ];
 
-const categories = ["All", "Team", "Product", "Brand"];
+const categories = ["All", "Model Design", "Prototype", "Blueprints", "Product", "Brand"];
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -82,7 +110,7 @@ const Gallery = () => {
               Photo <span className="text-primary">Gallery</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Explore our team, products, and behind-the-scenes moments.
+              Explore our model designs, prototypes, and blueprints of the Happy Drain device.
             </p>
           </motion.div>
         </div>

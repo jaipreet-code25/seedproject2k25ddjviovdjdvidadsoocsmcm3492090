@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone, Clock, Send, MessageSquare } from "lucide-react";
+import { Mail, MapPin, Instagram, Send, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -18,14 +18,14 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "contact@happydrains.in",
-    href: "mailto:contact@happydrains.in",
+    value: "happydrainsolutionsstfe@gmail.com",
+    href: "mailto:happydrainsolutionsstfe@gmail.com",
   },
   {
-    icon: Phone,
-    label: "Phone",
-    value: "+91 XXXXX XXXXX",
-    href: "tel:+91XXXXXXXXXX",
+    icon: Instagram,
+    label: "Instagram",
+    value: "@happy.drain.solutions",
+    href: "https://www.instagram.com/happy.drain.solutions/",
   },
   {
     icon: MapPin,
@@ -33,38 +33,32 @@ const contactInfo = [
     value: "India",
     href: "#",
   },
-  {
-    icon: Clock,
-    label: "Hours",
-    value: "Mon-Sat: 9AM - 6PM",
-    href: "#",
-  },
 ];
 
 const faqs = [
   {
-    question: "What is the Happy Drain system?",
-    answer: "The Happy Drain is an innovative drainage solution designed to prevent clogging at the source. It allows water to flow freely while trapping debris in an easy-to-clean compartment."
+    question: "What is the Happy Drain?",
+    answer: "The Happy Drain is a simple drainage device with a built-in mesh that catches dust, leaves, and debris. Water flows through freely while the mesh collects everything else in a removable compartment."
   },
   {
-    question: "How does it prevent waterlogging?",
-    answer: "By trapping debris before it can accumulate and block the drain, the Happy Drain ensures consistent water flow even during heavy rainfall, significantly reducing the risk of waterlogging."
+    question: "How does the mesh system work?",
+    answer: "The mesh sits inside the drain and lets water pass through while trapping debris. When it gets full, simply lift out the compartment, empty it, and put it back. No tools needed!"
   },
   {
-    question: "Is installation difficult?",
-    answer: "Our professional team handles all installations. The process is typically quick and minimally disruptive to your daily activities."
+    question: "Do I need a professional to install it?",
+    answer: "No! The Happy Drain is designed for easy DIY installation. It fits standard drain sizes and can be set up in minutes."
   },
   {
-    question: "How often does the debris compartment need cleaning?",
-    answer: "The cleaning frequency depends on your location and debris accumulation. Typically, we recommend checking it monthly and cleaning as needed."
+    question: "How often do I need to clean the mesh?",
+    answer: "It depends on your area and how much debris accumulates. Most users empty the mesh once a week or after heavy rain/storms."
   },
   {
-    question: "Do you offer commercial solutions?",
-    answer: "Yes! We provide large-scale drainage solutions for commercial properties, municipalities, and industrial areas with custom designs and scalable systems."
+    question: "How long does the mesh last?",
+    answer: "The mesh is made from durable materials and is designed to last for years with proper care. Replacement meshes are also available."
   },
   {
-    question: "What areas do you serve?",
-    answer: "We currently operate across major cities in India, with plans to expand nationwide. Contact us to check if we serve your area."
+    question: "Where can I buy the Happy Drain?",
+    answer: "Contact us through email or Instagram and we'll help you get your Happy Drain!"
   }
 ];
 

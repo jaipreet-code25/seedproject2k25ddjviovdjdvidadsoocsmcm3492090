@@ -3,26 +3,20 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
-import { ArrowRight, Droplets, Shield, Users, Image } from "lucide-react";
+import { ArrowRight, Droplets, Shield, Image } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import productViews from "@/assets/Screenshot 2025-12-28 164951_o1.jpg";
-import teamGroup from "@/assets/team-group.jpg";
 
 const features = [
   {
     icon: Droplets,
-    title: "Innovative Design",
-    description: "Our patented Happy Drain system prevents clogging at the source while allowing water to flow freely."
+    title: "Mesh Debris Collection",
+    description: "Built-in mesh catches leaves, dust, and debris while letting water flow through freely."
   },
   {
     icon: Shield,
-    title: "Flood Prevention",
-    description: "Protect your property and neighborhood from flooding with our advanced drainage solutions."
-  },
-  {
-    icon: Users,
-    title: "Expert Team",
-    description: "A dedicated team of engineers, designers, and innovators working to solve drainage challenges."
+    title: "Easy DIY Cleaning",
+    description: "Simply remove the compartment, empty the debris, and pop it back in. No tools or professionals needed."
   }
 ];
 
@@ -46,12 +40,12 @@ const Index = () => {
               About <span className="text-primary">Happy Drains Solutions</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              We are a dedicated team of drainage declogging solution designers. Our innovative approach tackles 
-              urban waterlogging at its root, providing reliable solutions for cities and communities across India.
+              We create simple, effective drainage devices. The Happy Drain uses a mesh system to catch 
+              debris before it clogs your drains—no professional help needed!
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 max-w-4xl mx-auto">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -92,13 +86,14 @@ const Index = () => {
                 The <span className="text-primary">Happy Drain</span> System
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                This year, cities across the nation have suffered from urban waterlogging. The Happy Drain solves 
-                this problem at the root—the drains themselves. Our innovative design allows water to flow freely 
-                while trapping debris in an easy-to-clean compartment.
+                The Happy Drain features a built-in mesh that catches all the dust, leaves, and debris 
+                that would normally clog your drains. Water flows through freely, while everything else 
+                gets collected in a removable compartment you can easily empty yourself.
               </p>
               <Link to="/services">
                 <Button size="lg" className="gap-2">
-                  View Our Services <ArrowRight className="w-4 h-4" />
+                  Learn More <ArrowRight className="w-4 h-4" />
+                </Button>
                 </Button>
               </Link>
             </motion.div>
@@ -118,50 +113,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Team Preview Section */}
-      <section className="py-20 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="order-2 lg:order-1"
-            >
-              <img 
-                src={teamGroup} 
-                alt="Happy Drains Team" 
-                className="w-full rounded-lg shadow-xl"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="order-1 lg:order-2"
-            >
-              <h2 className="text-4xl font-bold mb-6">
-                Meet Our <span className="text-primary">Team</span>
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                A dedicated team of innovators, engineers, and designers working together to solve urban drainage 
-                challenges. From technology experts to 3D designers, each member brings unique skills to create 
-                the best possible solutions.
-              </p>
-              <Link to="/team">
-                <Button size="lg" variant="outline" className="gap-2">
-                  Meet The Team <ArrowRight className="w-4 h-4" />
-                </Button>
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* Gallery Preview Section */}
-      <section className="py-20 px-4 md:px-8 bg-muted/30">
+      <section className="py-20 px-4 md:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -174,7 +127,7 @@ const Index = () => {
               Photo <span className="text-primary">Gallery</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-              Explore our team photos, product designs, and behind-the-scenes moments in our gallery.
+              Explore our product designs and behind-the-scenes moments in our gallery.
             </p>
             <Link to="/gallery">
               <Button size="lg" className="gap-2">

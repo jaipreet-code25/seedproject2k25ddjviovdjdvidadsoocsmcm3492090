@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Instagram, Twitter, Github } from "lucide-react";
+import { Menu, X, Instagram, Twitter } from "lucide-react";
 import logo from "@/assets/logo1.jpg";
 
 const Navbar = () => {
@@ -19,16 +19,14 @@ const Navbar = () => {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
-    { label: "Services", href: "/services" },
-    { label: "Team", href: "/team" },
+    { label: "Product", href: "/services" },
     { label: "Gallery", href: "/gallery" },
     { label: "Contact", href: "/contact" },
   ];
 
   const socialLinks = [
-    { label: "Instagram", href: "https://www.instagram.com/happy.drain.solutions/?utm_source=ig_web_button_share_sheet", icon: Instagram },
+    { label: "Instagram", href: "https://www.instagram.com/happy.drain.solutions/", icon: Instagram },
     { label: "Twitter", href: "https://x.com/happy_drain", icon: Twitter },
-    { label: "GitHub", href: "https://github.com/", icon: Github },
   ];
 
   const isActive = (href: string) => {

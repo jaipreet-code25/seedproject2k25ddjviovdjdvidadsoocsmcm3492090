@@ -6,23 +6,23 @@ import { CheckCircle, Target, Heart, Lightbulb } from "lucide-react";
 const values = [
   {
     icon: Target,
-    title: "Innovation",
-    description: "We constantly push the boundaries of drainage technology to deliver cutting-edge solutions."
+    title: "Simple Solutions",
+    description: "We design products that are easy to use—no complicated installations or professional help needed."
   },
   {
     icon: Heart,
-    title: "Community First",
-    description: "Our work is driven by a genuine desire to improve the lives of millions across India."
+    title: "Affordable",
+    description: "Quality drainage solutions that don't break the bank."
   },
   {
     icon: CheckCircle,
-    title: "Quality",
-    description: "We never compromise on the quality of our products and services."
+    title: "Durable",
+    description: "Built with quality materials to withstand years of use."
   },
   {
     icon: Lightbulb,
-    title: "Sustainability",
-    description: "Our solutions are designed with environmental sustainability in mind."
+    title: "Eco-Friendly",
+    description: "Sustainable materials and design that help the environment."
   }
 ];
 
@@ -52,8 +52,8 @@ const About = () => {
               About <span className="text-primary">Us</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              We are a dedicated team of drainage declogging solution designers working to solve 
-              urban waterlogging problems across India.
+              We design and build innovative drainage devices that prevent clogging 
+              using simple mesh-based debris collection technology.
             </p>
           </motion.div>
         </div>
@@ -71,13 +71,13 @@ const About = () => {
             >
               <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Happy Drains Solutions represents excellence in drainage and plumbing services 
-                with a smile. Our innovative approach tackles urban waterlogging at its root, 
-                providing reliable solutions for cities and communities across India.
+                Happy Drains Solutions creates simple, effective drainage devices that anyone can use. 
+                Our Happy Drain features a built-in mesh that collects dust, leaves, and debris—
+                preventing clogs before they happen.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                We believe that clean, efficient drainage is not just a convenience—it's a 
-                fundamental right that affects public health, transportation, and quality of life.
+                We believe preventing drain clogs shouldn't require expensive professional help. 
+                Our device is easy to install, easy to clean, and built to last.
               </p>
             </motion.div>
             <motion.div
