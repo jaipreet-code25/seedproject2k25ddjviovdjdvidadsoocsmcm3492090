@@ -45,14 +45,6 @@ const faqs = [
     answer: "The mesh sits inside the drain and lets water pass through while trapping debris. When it gets full, simply lift out the compartment, empty it, and put it back. No tools needed!"
   },
   {
-    question: "Do I need a professional to install it?",
-    answer: "No! The Happy Drain is designed for easy DIY installation. It fits standard drain sizes and can be set up in minutes."
-  },
-  {
-    question: "How often do I need to clean the mesh?",
-    answer: "It depends on your area and how much debris accumulates. Most users empty the mesh once a week or after heavy rain/storms."
-  },
-  {
     question: "How long does the mesh last?",
     answer: "The mesh is made from durable materials and is designed to last for years with proper care. Replacement meshes are also available."
   },

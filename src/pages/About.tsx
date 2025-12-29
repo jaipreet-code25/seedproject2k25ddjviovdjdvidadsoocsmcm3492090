@@ -26,13 +26,6 @@ const values = [
   }
 ];
 
-const milestones = [
-  { year: "2024", event: "Happy Drains Solutions founded" },
-  { year: "2024", event: "First prototype developed" },
-  { year: "2025", event: "Pilot program launched in select cities" },
-  { year: "2025", event: "Expanding operations nationwide" }
-];
-
 const About = () => {
   return (
     <main className="min-h-screen">
@@ -122,40 +115,6 @@ const About = () => {
                 <value.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
                 <h3 className="text-xl font-bold mb-2">{value.title}</h3>
                 <p className="text-muted-foreground text-sm">{value.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline Section */}
-      <section className="py-16 px-4 md:px-8">
-        <div className="max-w-4xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-4xl font-bold text-center mb-12"
-          >
-            Our <span className="text-primary">Journey</span>
-          </motion.h2>
-          <div className="space-y-6">
-            {milestones.map((milestone, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="flex items-center gap-6"
-              >
-                <div className="w-24 text-right">
-                  <span className="text-2xl font-bold text-primary">{milestone.year}</span>
-                </div>
-                <div className="w-4 h-4 rounded-full bg-primary flex-shrink-0" />
-                <div className="flex-1 card-glass p-4 rounded-lg">
-                  <p className="text-foreground">{milestone.event}</p>
-                </div>
               </motion.div>
             ))}
           </div>
