@@ -16,7 +16,7 @@ const features = [
   {
     icon: Shield,
     title: "Easy DIY Cleaning",
-    description: "Simply remove the compartment, empty the debris, and pop it back in. No tools or professionals needed."
+    description: "Clean and maintain the device yourself in minutes."
   }
 ];
 
