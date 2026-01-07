@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Phone, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const HeroSection = () => {
@@ -118,6 +118,11 @@ const HeroSection = () => {
           <Link to="/services">
             <Button size="lg" className="w-full sm:w-auto gap-2 text-lg px-8 py-6">
               Explore Our Solution <ArrowRight className="w-5 h-5" />
+            </Button>
+          </Link>
+          <Link to="/blog">
+            <Button size="lg" variant="outline" className="w-full sm:w-auto gap-2 text-lg px-8 py-6">
+              <BookOpen className="w-5 h-5" /> Open Blog
             </Button>
           </Link>
           <Link to="/contact">
