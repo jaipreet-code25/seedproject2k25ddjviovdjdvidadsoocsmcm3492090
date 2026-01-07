@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Lock, Edit, Trash2, Calendar, Plus } from "lucide-react";
+import { Lock, Edit, Trash2, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -95,10 +95,10 @@ const Blog = () => {
     }
 
     if (editingPost) {
-      // Update existing post
+      // Update existing post - preserve original date
       const updatedPosts = posts.map(post =>
         post.id === editingPost.id
-          ? { ...post, title: formData.title, content: formData.content, date: new Date().toISOString() }
+          ? { ...post, title: formData.title, content: formData.content }
           : post
       );
       savePosts(updatedPosts);
