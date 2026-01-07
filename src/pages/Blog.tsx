@@ -22,6 +22,8 @@ interface BlogPost {
   date: string;
 }
 
+// Admin password is hardcoded as per requirements for simplicity
+// In a production environment, this should use proper server-side authentication
 const ADMIN_PASSWORD = "admin123";
 const STORAGE_KEY = "happyDrainBlogPosts";
 
@@ -107,9 +109,9 @@ const Blog = () => {
         description: "Your blog post has been successfully updated.",
       });
     } else {
-      // Create new post
+      // Create new post with unique ID
       const newPost: BlogPost = {
-        id: Date.now().toString(),
+        id: crypto.randomUUID(),
         title: formData.title,
         content: formData.content,
         date: new Date().toISOString(),
