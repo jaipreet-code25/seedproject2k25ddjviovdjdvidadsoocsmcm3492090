@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
-import { Lock, Edit, Trash2, Calendar, Loader2 } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Lock, Edit, Trash2, Calendar, Loader2, Bold, Italic, Underline, List, ListOrdered, Link, Image, Heading1, Heading2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -64,6 +64,61 @@ const Blog = () => {
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(posts));
   }, [posts]);
+
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  // Formatting functions
+  const insertText = (before: string, after: string = "", placeholder: string = "") => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const selectedText = textarea.value.substring(start, end);
+    const textToInsert = selectedText || placeholder;
+    const newText = textarea.value.substring(0, start) + before + textToInsert + after + textarea.value.substring(end);
+
+    setFormData({ ...formData, content: newText });
+
+    // Set cursor position after insertion
+    setTimeout(() => {
+      textarea.focus();
+      const newCursorPos = start + before.length + textToInsert.length + (selectedText ? 0 : after.length);
+      textarea.setSelectionRange(newCursorPos, newCursorPos);
+    }, 0);
+  };
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    // Check file size (limit to 2MB)
+    if (file.size > 2 * 1024 * 1024) {
+      toast({
+        title: "File too large",
+        description: "Please select an image smaller than 2MB.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Check file type
+    if (!file.type.startsWith('image/')) {
+      toast({
+        title: "Invalid file type",
+        description: "Please select a valid image file.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const dataUrl = event.target?.result as string;
+      insertText(`![Image](${dataUrl})`, "", "Image description");
+    };
+    reader.readAsDataURL(file);
+  };
 
   const handlePasswordSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -171,6 +226,51 @@ const Blog = () => {
     });
   };
 
+  // Simple markdown renderer
+  const renderContent = (content: string) => {
+    return content
+      .split('\n')
+      .map((line, index) => {
+        // Handle headings
+        if (line.startsWith('## ')) {
+          return <h3 key={index} className="text-2xl font-bold mt-6 mb-3">{line.substring(3)}</h3>;
+        }
+        if (line.startsWith('# ')) {
+          return <h2 key={index} className="text-3xl font-bold mt-8 mb-4">{line.substring(2)}</h2>;
+        }
+
+        // Handle lists
+        if (line.startsWith('- ') || /^\d+\.\s/.test(line)) {
+          return <li key={index} className="ml-4">{line.replace(/^[-]\s|^(\d+\.)\s/, '')}</li>;
+        }
+
+        // Handle empty lines (for spacing)
+        if (line.trim() === '') {
+          return <br key={index} />;
+        }
+
+        // Handle regular paragraphs with inline formatting
+        let processedLine = line;
+
+        // Bold (**text**)
+        processedLine = processedLine.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+
+        // Italic (*text*)
+        processedLine = processedLine.replace(/\*(.*?)\*/g, '<em>$1</em>');
+
+        // Underline (<u>text</u>)
+        processedLine = processedLine.replace(/<u>(.*?)<\/u>/g, '<u>$1</u>');
+
+        // Links [text](url)
+        processedLine = processedLine.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">$1</a>');
+
+        // Images ![alt](url)
+        processedLine = processedLine.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="max-w-full h-auto rounded-lg my-4" />');
+
+        return <p key={index} className="mb-4" dangerouslySetInnerHTML={{ __html: processedLine }} />;
+      });
+  };
+
   return (
     <main className="min-h-screen">
       <Navbar />
@@ -233,7 +333,7 @@ const Blog = () => {
                     </div>
                   </div>
                   <div className="prose prose-lg dark:prose-invert max-w-none">
-                    <p className="text-foreground/80 whitespace-pre-wrap">{post.content}</p>
+                    {renderContent(post.content)}
                   </div>
                 </motion.article>
               ))}
@@ -305,13 +405,121 @@ const Blog = () => {
                   <label htmlFor="content" className="block text-sm font-medium mb-2">
                     Content
                   </label>
+                  {/* Formatting Toolbar */}
+                  <div className="flex flex-wrap gap-1 p-2 border border-border rounded-t-lg bg-muted/30">
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => insertText("**", "**", "bold text")}
+                      className="h-8 w-8 p-0"
+                      title="Bold"
+                    >
+                      <Bold className="w-4 h-4" />
+                    </Button>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => insertText("*", "*", "italic text")}
+                      className="h-8 w-8 p-0"
+                      title="Italic"
+                    >
+                      <Italic className="w-4 h-4" />
+                    </Button>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => insertText("<u>", "</u>", "underlined text")}
+                      className="h-8 w-8 p-0"
+                      title="Underline"
+                    >
+                      <Underline className="w-4 h-4" />
+                    </Button>
+                    <div className="w-px h-6 bg-border mx-1" />
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => insertText("# ", "", "Heading")}
+                      className="h-8 w-8 p-0"
+                      title="Heading 1"
+                    >
+                      <Heading1 className="w-4 h-4" />
+                    </Button>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => insertText("## ", "", "Subheading")}
+                      className="h-8 w-8 p-0"
+                      title="Heading 2"
+                    >
+                      <Heading2 className="w-4 h-4" />
+                    </Button>
+                    <div className="w-px h-6 bg-border mx-1" />
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => insertText("- ", "", "List item")}
+                      className="h-8 w-8 p-0"
+                      title="Bullet List"
+                    >
+                      <List className="w-4 h-4" />
+                    </Button>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => insertText("1. ", "", "List item")}
+                      className="h-8 w-8 p-0"
+                      title="Numbered List"
+                    >
+                      <ListOrdered className="w-4 h-4" />
+                    </Button>
+                    <div className="w-px h-6 bg-border mx-1" />
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => insertText("[", "](url)", "link text")}
+                      className="h-8 w-8 p-0"
+                      title="Link"
+                    >
+                      <Link className="w-4 h-4" />
+                    </Button>
+                    <label className="cursor-pointer">
+                      <Button
+                        type="button"
+                        variant="ghost"
+                        size="sm"
+                        className="h-8 w-8 p-0"
+                        title="Upload Image"
+                        asChild
+                      >
+                        <span>
+                          <Image className="w-4 h-4" />
+                        </span>
+                      </Button>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageUpload}
+                        className="hidden"
+                      />
+                    </label>
+                  </div>
                   <Textarea
+                    ref={textareaRef}
                     id="content"
                     value={formData.content}
                     onChange={(e) => setFormData({ ...formData, content: e.target.value })}
-                    placeholder="Write your blog post content..."
-                    rows={10}
+                    placeholder="Write your blog post content...&#10;&#10;Formatting tips:&#10;• Use **bold** and *italic* text&#10;• Create headings with # and ##&#10;• Make lists with - or 1.&#10;• Add links with [text](url)&#10;• Upload images with the image button"
+                    rows={12}
                     required
+                    className="rounded-t-none"
                   />
                 </div>
                 <div className="flex gap-2">
