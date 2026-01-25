@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { Lock, Edit, Trash2, Calendar } from "lucide-react";
+import { Lock, Edit, Trash2, Calendar, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -20,12 +20,14 @@ interface BlogPost {
   title: string;
   content: string;
   date: string;
+  author: string;
 }
 
-// Admin password is hardcoded as per requirements for simplicity
-// In a production environment, this should use proper server-side authentication
+// Admin password - change this to your desired password
+// Anyone with this password can post to the blog
 const ADMIN_PASSWORD = "admin123";
-const STORAGE_KEY = "happyDrainBlogPosts";
+
+const STORAGE_KEY = "blogPosts";
 
 const Blog = () => {
   const { toast } = useToast();
@@ -34,37 +36,34 @@ const Blog = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
   const [editingPost, setEditingPost] = useState<BlogPost | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
     content: "",
+    author: "",
   });
 
-  // Load posts from localStorage
+  // Load posts from localStorage on mount
   useEffect(() => {
     const storedPosts = localStorage.getItem(STORAGE_KEY);
     if (storedPosts) {
       try {
-        const parsedPosts = JSON.parse(storedPosts);
-        // Sort by date descending (newest first)
-        const sortedPosts = parsedPosts.sort((a: BlogPost, b: BlogPost) => 
-          new Date(b.date).getTime() - new Date(a.date).getTime()
-        );
-        setPosts(sortedPosts);
+        setPosts(JSON.parse(storedPosts));
       } catch (error) {
         console.error("Error loading posts:", error);
+        toast({
+          title: "Error",
+          description: "Failed to load blog posts.",
+          variant: "destructive",
+        });
       }
     }
-  }, []);
+  }, [toast]);
 
-  // Save posts to localStorage
-  const savePosts = (updatedPosts: BlogPost[]) => {
-    // Sort by date descending before saving
-    const sortedPosts = [...updatedPosts].sort((a, b) => 
-      new Date(b.date).getTime() - new Date(a.date).getTime()
-    );
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(sortedPosts));
-    setPosts(sortedPosts);
-  };
+  // Save posts to localStorage whenever posts change
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(posts));
+  }, [posts]);
 
   const handlePasswordSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -84,10 +83,10 @@ const Blog = () => {
     }
   };
 
-  const handlePublish = (e: React.FormEvent) => {
+  const handlePublish = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.title.trim() || !formData.content.trim()) {
+    if (!formData.title.trim() || !formData.content.trim() || !formData.author.trim()) {
       toast({
         title: "Error",
         description: "Please fill in all fields",
@@ -96,45 +95,59 @@ const Blog = () => {
       return;
     }
 
-    if (editingPost) {
-      // Update existing post - preserve original date
-      const updatedPosts = posts.map(post =>
-        post.id === editingPost.id
-          ? { ...post, title: formData.title, content: formData.content }
-          : post
-      );
-      savePosts(updatedPosts);
-      toast({
-        title: "Post Updated!",
-        description: "Your blog post has been successfully updated.",
-      });
-    } else {
-      // Create new post with unique ID
-      const newPost: BlogPost = {
-        id: crypto.randomUUID(),
-        title: formData.title,
-        content: formData.content,
-        date: new Date().toISOString(),
-      };
-      savePosts([...posts, newPost]);
-      toast({
-        title: "Post Published!",
-        description: "Your blog post has been successfully published.",
-      });
-    }
+    setIsSubmitting(true);
 
-    setFormData({ title: "", content: "" });
-    setEditingPost(null);
+    try {
+      if (editingPost) {
+        // Update existing post
+        setPosts(prevPosts =>
+          prevPosts.map(post =>
+            post.id === editingPost.id
+              ? { ...post, title: formData.title, content: formData.content, author: formData.author }
+              : post
+          )
+        );
+        toast({
+          title: "Post Updated!",
+          description: "Your blog post has been successfully updated.",
+        });
+      } else {
+        // Create new post
+        const newPost: BlogPost = {
+          id: Date.now().toString(), // Simple unique ID
+          title: formData.title,
+          content: formData.content,
+          author: formData.author,
+          date: new Date().toISOString(),
+        };
+        setPosts(prevPosts => [newPost, ...prevPosts]);
+        toast({
+          title: "Post Published!",
+          description: "Your blog post has been successfully published.",
+        });
+      }
+
+      setFormData({ title: "", content: "", author: "" });
+      setEditingPost(null);
+    } catch (error) {
+      console.error("Error saving post:", error);
+      toast({
+        title: "Error",
+        description: "Failed to save post. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleEdit = (post: BlogPost) => {
     setEditingPost(post);
-    setFormData({ title: post.title, content: post.content });
+    setFormData({ title: post.title, content: post.content, author: post.author });
   };
 
   const handleDelete = (postId: string) => {
-    const updatedPosts = posts.filter(post => post.id !== postId);
-    savePosts(updatedPosts);
+    setPosts(prevPosts => prevPosts.filter(post => post.id !== postId));
     toast({
       title: "Post Deleted",
       description: "The blog post has been removed.",
@@ -145,7 +158,7 @@ const Blog = () => {
     setIsAdminOpen(false);
     setIsAuthenticated(false);
     setPassword("");
-    setFormData({ title: "", content: "" });
+    setFormData({ title: "", content: "", author: "" });
     setEditingPost(null);
   };
 
@@ -210,7 +223,10 @@ const Blog = () => {
                   className="card-glass p-8 rounded-lg hover:shadow-xl transition-shadow"
                 >
                   <div className="flex items-start justify-between gap-4 mb-4">
-                    <h2 className="text-3xl font-bold">{post.title}</h2>
+                    <div>
+                      <h2 className="text-3xl font-bold">{post.title}</h2>
+                      <p className="text-sm text-muted-foreground mt-1">By {post.author}</p>
+                    </div>
                     <div className="flex items-center gap-2 text-sm text-muted-foreground whitespace-nowrap">
                       <Calendar className="w-4 h-4" />
                       {formatDate(post.date)}
@@ -262,6 +278,18 @@ const Blog = () => {
               {/* Blog Editor */}
               <form onSubmit={handlePublish} className="space-y-4">
                 <div>
+                  <label htmlFor="author" className="block text-sm font-medium mb-2">
+                    Author Name
+                  </label>
+                  <Input
+                    id="author"
+                    value={formData.author}
+                    onChange={(e) => setFormData({ ...formData, author: e.target.value })}
+                    placeholder="Enter your name"
+                    required
+                  />
+                </div>
+                <div>
                   <label htmlFor="title" className="block text-sm font-medium mb-2">
                     Title
                   </label>
@@ -287,8 +315,15 @@ const Blog = () => {
                   />
                 </div>
                 <div className="flex gap-2">
-                  <Button type="submit" className="flex-1">
-                    {editingPost ? "Update Post" : "Publish Post"}
+                  <Button type="submit" className="flex-1" disabled={isSubmitting}>
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                        {editingPost ? "Updating..." : "Publishing..."}
+                      </>
+                    ) : (
+                      editingPost ? "Update Post" : "Publish Post"
+                    )}
                   </Button>
                   {editingPost && (
                     <Button
@@ -296,7 +331,7 @@ const Blog = () => {
                       variant="outline"
                       onClick={() => {
                         setEditingPost(null);
-                        setFormData({ title: "", content: "" });
+                        setFormData({ title: "", content: "", author: "" });
                       }}
                     >
                       Cancel
