@@ -3,12 +3,12 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Users } from "lucide-react";
 
-import jaipreetImg from "@/assets/jaipreet.jpg";
-import samarohaImg from "@/assets/samaroha.jpg";
-import sharanyoImg from "@/assets/sharanyo.jpg";
-import abhinavaImg from "@/assets/abhinava.jpg";
-import tejasImg from "@/assets/tejas.jpg";
-import ayushman1Img from "@/assets/ayushman1.jpg";
+import team1Img from "@/assets/team1.jpeg";
+import team2Img from "@/assets/team2.jpeg";
+import team3Img from "@/assets/team3.jpeg";
+import team4Img from "@/assets/team4.jpeg";
+import team5Img from "@/assets/team5.jpeg";
+import team6Img from "@/assets/team6.jpeg";
 
 interface TeamMember {
   name: string;
@@ -17,12 +17,12 @@ interface TeamMember {
 }
 
 const team: TeamMember[] = [
-  { name: "Jaipreet Purkayastha", role: "Product Design", image: jaipreetImg },
-  { name: "Tejas Singh", role: "Operations", image: samarohaImg },
-  { name: "Sharanyo Chakraborty", role: "Engineering", image: abhinavaImg },
-  { name: "Abhinava Bandopadhyay", role: "Research", image: sharanyoImg },
-  { name: "Ayushman Singh", role: "Manufacturing", image: ayushman1Img },
-  { name: "Samaroha Bhattacharyya", role: "Prototyping", image: tejasImg },
+  { name: "Jaipreet Purkayastha", role: "Product Designer", image: team6Img },
+  { name: "Tejas Singh", role: "Operations", image: team5Img },
+  { name: "Sharanyo Chakraborty", role: "Marketing", image: team4Img },
+  { name: "Abhinava Bandopadhyay", role: "Product Development", image: team3Img },
+  { name: "Ayushman Singh", role: "Graphic Design", image: team2Img },
+  { name: "Samaroha Bhattacharyya", role: "Web Development", image: team1Img },
 ];
 
 const Team = () => {
@@ -62,11 +62,13 @@ const Team = () => {
               transition={{ duration: 0.6, delay: index * 0.05 }}
               className="card-glass p-6 rounded-lg text-center hover:shadow-lg transition-shadow"
             >
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-32 h-32 mx-auto mb-4 rounded-full object-cover shadow-md"
-              />
+              <div className="w-full aspect-[3/4] mb-4 overflow-hidden rounded-lg shadow-md">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
               <h3 className="text-lg font-bold">{member.name}</h3>
               <p className="text-sm text-muted-foreground">{member.role}</p>
             </motion.div>

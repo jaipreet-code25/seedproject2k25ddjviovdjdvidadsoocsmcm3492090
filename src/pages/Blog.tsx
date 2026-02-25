@@ -66,6 +66,7 @@ const Blog = () => {
   }, [posts]);
 
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   // Formatting functions
   const insertText = (before: string, after: string = "", placeholder: string = "") => {
@@ -116,6 +117,23 @@ const Blog = () => {
     reader.onload = (event) => {
       const dataUrl = event.target?.result as string;
       insertText(`![Image](${dataUrl})`, "", "Image description");
+      
+      // Reset file input so user can upload the same image again
+      if (fileInputRef.current) {
+        fileInputRef.current.value = '';
+      }
+      
+      toast({
+        title: "Image uploaded",
+        description: "Image has been added to your post.",
+      });
+    };
+    reader.onerror = () => {
+      toast({
+        title: "Upload failed",
+        description: "Failed to read the image file.",
+        variant: "destructive",
+      });
     };
     reader.readAsDataURL(file);
   };
@@ -265,7 +283,7 @@ const Blog = () => {
         processedLine = processedLine.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-primary hover:underline" target="_blank" rel="noopener noreferrer">$1</a>');
 
         // Images ![alt](url)
-        processedLine = processedLine.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="max-w-full h-auto rounded-lg my-4" />');
+        processedLine = processedLine.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="max-w-full h-auto rounded-lg my-4 shadow-md" onerror="this.style.display=\'none\'" />');
 
         return <p key={index} className="mb-4" dangerouslySetInnerHTML={{ __html: processedLine }} />;
       });
@@ -289,7 +307,8 @@ const Blog = () => {
               Our <span className="text-primary">Blog</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-8">
-              Stay updated with the latest news, insights, and updates from Happy Drains Solutions
+              Stay updated with the latest news, insights, and updates from Happy Drains Solutions.
+              Our blog is open to everyone - only posting requires admin access.
             </p>
             <Button onClick={() => setIsAdminOpen(true)} variant="outline" className="gap-2">
               <Lock className="w-4 h-4" /> Admin Panel
@@ -490,26 +509,23 @@ const Blog = () => {
                     >
                       <Link className="w-4 h-4" />
                     </Button>
-                    <label className="cursor-pointer">
-                      <Button
-                        type="button"
-                        variant="ghost"
-                        size="sm"
-                        className="h-8 w-8 p-0"
-                        title="Upload Image"
-                        asChild
-                      >
-                        <span>
-                          <Image className="w-4 h-4" />
-                        </span>
-                      </Button>
-                      <input
-                        type="file"
-                        accept="image/*"
-                        onChange={handleImageUpload}
-                        className="hidden"
-                      />
-                    </label>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => fileInputRef.current?.click()}
+                      className="h-8 w-8 p-0"
+                      title="Upload Image"
+                    >
+                      <Image className="w-4 h-4" />
+                    </Button>
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageUpload}
+                      className="hidden"
+                    />
                   </div>
                   <Textarea
                     ref={textareaRef}
