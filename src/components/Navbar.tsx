@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Instagram, Twitter } from "lucide-react";
-import logo from "@/assets/logo1.jpg";
+import logo from "@/assets/WhatsApp Image 2026-02-25 at 8.42.03 AM.jpeg";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
