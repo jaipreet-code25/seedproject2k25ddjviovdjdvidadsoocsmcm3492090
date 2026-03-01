@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
+import clearflowBlog1 from "@/assets/clearflow-blog-1.jpg";
 import { Lock, Edit, Trash2, Calendar, Loader2, Bold, Italic, Underline, List, ListOrdered, Link, Image, Heading1, Heading2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -314,6 +315,76 @@ const Blog = () => {
               <Lock className="w-4 h-4" /> Admin Panel
             </Button>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Hardcoded ClearFlow Blog Post */}
+      <section className="py-8 px-4 md:px-8">
+        <div className="max-w-4xl mx-auto">
+          <motion.article
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="card-glass p-8 rounded-lg hover:shadow-xl transition-shadow"
+          >
+            <div className="flex items-start justify-between gap-4 mb-6">
+              <div>
+                <h2 className="text-3xl font-bold">A Student-Made Product Big Companies Didn't See Coming: ClearFlow</h2>
+                <p className="text-sm text-muted-foreground mt-1">By Happy Drains Solutions Team</p>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground whitespace-nowrap">
+                <Calendar className="w-4 h-4" />
+                March 1, 2026
+              </div>
+            </div>
+
+            <div className="prose prose-lg dark:prose-invert max-w-none space-y-4">
+              {/* Section 1 */}
+              <h3 className="text-2xl font-bold">What is ClearFlow?</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Every year, homeowners and businesses struggle with clogged drains, slow water flow, and recurring
+                maintenance — problems that big companies charge expensive service fees to fix. But what if a simple,
+                smart, and effective solution could come from someone who only recently learned the challenges firsthand?
+              </p>
+
+              {/* First image */}
+              <img
+                src={clearflowBlog1}
+                alt="Storm drain with water and rain — ClearFlow product showcase"
+                className="w-full rounded-lg shadow-md my-6"
+              />
+
+              {/* Section 2 */}
+              <p className="text-muted-foreground leading-relaxed">
+                Enter ClearFlow — a product designed by the students of Class 9 of Delhi Public School Newtown to make
+                drain systems cleaner and easier to manage. Built from curiosity, refined through testing, and crafted
+                with practical needs in mind, ClearFlow proves that innovation doesn't always start in giant R&amp;D
+                labs — sometimes it starts in a student's workshop.
+              </p>
+
+              <hr className="border-border" />
+
+              <h3 className="text-2xl font-bold">About ClearFlow: What It Is and Why It Matters</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Unlike temporary fixes or expensive professional services, ClearFlow is{" "}
+                <strong>designed to help users prevent problems before they start</strong>. Here's how:
+              </p>
+
+              <h4 className="text-xl font-bold">What ClearFlow Does</h4>
+              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                <li><strong>Prevents blockages</strong> by stopping the clog at the initial stage itself.</li>
+                <li><strong>Reduces installation costs</strong> as it can be retrofitted to already existing drains.</li>
+                <li><strong>Reduces maintenance cost</strong> with an easy to clean design.</li>
+              </ul>
+
+              <p className="text-muted-foreground leading-relaxed">
+                While established companies often focus on large-scale, one-size-fits-all products, ClearFlow was{" "}
+                <strong>built from directly observing real challenges</strong> faced by everyday users. That insight —
+                combined with…
+              </p>
+            </div>
+          </motion.article>
         </div>
       </section>
 
