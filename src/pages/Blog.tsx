@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import clearflowBlog1 from "@/assets/clearflow-blog-1.jpg";
+import clearflowBlog2 from "@/assets/clearflow-blog-2.png";
+import clearflowBlog3 from "@/assets/clearflow-blog-3.png";
 import { Lock, Edit, Trash2, Calendar, Loader2, Bold, Italic, Underline, List, ListOrdered, Link, Image, Heading1, Heading2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -381,8 +383,33 @@ const Blog = () => {
               <p className="text-muted-foreground leading-relaxed">
                 While established companies often focus on large-scale, one-size-fits-all products, ClearFlow was{" "}
                 <strong>built from directly observing real challenges</strong> faced by everyday users. That insight —
-                combined with…
+                combined with simple engineering principles — lets it deliver meaningful results without complex machinery or high costs.
               </p>
+
+              {/* Assembled model image */}
+              <img
+                src={clearflowBlog2}
+                alt="ClearFlow assembled model — full device with 4 clamps, 2 bars, and mesh net"
+                className="w-full rounded-lg shadow-md my-6"
+              />
+
+              <h4 className="text-xl font-bold">Key Features</h4>
+              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                <li><strong>Adjustable frame</strong> — by eliminating rigid frames, ClearFlow can be installed on drains of any size.</li>
+                <li><strong>User-friendly design</strong> — can be installed with no special tools.</li>
+                <li><strong>Problem-first engineering</strong> — made to stop the problem before it starts.</li>
+              </ul>
+
+              <p className="text-muted-foreground leading-relaxed">
+                ClearFlow stands out because it's <strong>not just another product on a shelf</strong> — it's a solution that reflects the voice and understanding of real people experiencing real problems.
+              </p>
+
+              {/* Single arm image */}
+              <img
+                src={clearflowBlog3}
+                alt="ClearFlow single arm — 3D render of a single arm/bar with two hook clamps on either end"
+                className="w-full rounded-lg shadow-md my-6"
+              />
             </div>
           </motion.article>
         </div>
