@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import clearflowBlog1 from "@/assets/clearflow-blog-1.jpg";
 import clearflowBlog2 from "@/assets/clearflow-blog-2.png";
 import clearflowBlog3 from "@/assets/clearflow-blog-3.jpg";
-import clearflowBlog4 from "@/assets/clearflow-blog-3.png";
+import clearflowBlog4 from "@/assets/clearflow-blog-4.png";
 import { Lock, Edit, Trash2, Calendar, Loader2, Bold, Italic, Underline, List, ListOrdered, Link, Image, Heading1, Heading2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
