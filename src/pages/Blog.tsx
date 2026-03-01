@@ -2,7 +2,8 @@ import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import clearflowBlog1 from "@/assets/clearflow-blog-1.jpg";
 import clearflowBlog2 from "@/assets/clearflow-blog-2.png";
-import clearflowBlog3 from "@/assets/clearflow-blog-3.png";
+import clearflowBlog3 from "@/assets/clearflow-blog-3.jpg";
+import clearflowBlog4 from "@/assets/clearflow-blog-3.png";
 import { Lock, Edit, Trash2, Calendar, Loader2, Bold, Italic, Underline, List, ListOrdered, Link, Image, Heading1, Heading2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -406,10 +407,81 @@ const Blog = () => {
 
               {/* Single arm image */}
               <img
-                src={clearflowBlog3}
+                src={clearflowBlog4}
                 alt="ClearFlow single arm — 3D render of a single arm/bar with two hook clamps on either end"
                 className="w-full rounded-lg shadow-md my-6"
               />
+
+              <hr className="border-border" />
+
+              {/* How ClearFlow Supports Local Drainage Workers Section */}
+              <h3 className="text-2xl font-bold">How ClearFlow Supports Local Drainage Workers</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                Cleaners do not have to get inside the drains to clean them of accumulated debris, but now can do
+                so by lifting and cleaning a simple removable net.
+              </p>
+
+              <ul className="list-disc list-inside space-y-3 text-muted-foreground">
+                <li>
+                  <strong>Reduces manual drain entry</strong>
+                  <br />
+                  By preventing heavy debris accumulation, ClearFlow lowers how often workers need to enter
+                  drains for cleaning.
+                </li>
+                <li>
+                  <strong>Improves worker safety</strong>
+                  <br />
+                  Fewer blockages mean reduced exposure to harmful waste, toxic gases, and unsafe working
+                  conditions.
+                </li>
+                <li>
+                  <strong>Less physical strain</strong>
+                  <br />
+                  Workers deal with lighter, routine maintenance instead of exhausting emergency clean-ups.
+                </li>
+                <li>
+                  <strong>Saves time and effort</strong>
+                  <br />
+                  Cleaner drains allow faster maintenance, improving daily efficiency for sanitation teams.
+                </li>
+                <li>
+                  <strong>Encourages dignity in work</strong>
+                  <br />
+                  By minimizing hazardous tasks, ClearFlow helps create safer and more respectful working
+                  conditions for local workers.
+                </li>
+              </ul>
+
+              {/* Drainage workers image */}
+              <img
+                src={clearflowBlog3}
+                alt="Drainage workers cleaning a street drain"
+                className="w-full rounded-lg shadow-md my-6"
+              />
+
+              <hr className="border-border" />
+
+              {/* Conclusion Section */}
+              <h3 className="text-2xl font-bold">Conclusion: Why ClearFlow Is More Than Just an Idea</h3>
+
+              <p className="text-muted-foreground leading-relaxed">
+                ClearFlow isn't just a clever school project — it's proof that{" "}
+                <strong>innovative thinking and real-world problem solving can come from unexpected places</strong>.{" "}
+                Big companies may have budget, brand, and reach, but they sometimes{" "}
+                <em>miss the small, everyday frustrations</em> their customers experience.
+              </p>
+
+              <p className="text-muted-foreground leading-relaxed">
+                ClearFlow does not just stop clogs, it stops the suffering of the poor workers.
+              </p>
+
+              <p className="text-muted-foreground leading-relaxed">
+                That's where student innovators like you — and products like ClearFlow — shine.
+              </p>
+
+              <p className="text-muted-foreground leading-relaxed">
+                If you could buy this product for your locality, would you try and make a difference?
+              </p>
             </div>
           </motion.article>
         </div>
