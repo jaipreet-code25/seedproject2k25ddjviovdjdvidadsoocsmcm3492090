@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
+import BlogProgressBar from "@/components/BlogProgressBar";
 import Footer from "@/components/Footer";
 import {
   Dialog,
@@ -296,6 +297,7 @@ const Blog = () => {
   return (
     <main className="min-h-screen">
       <Navbar />
+      <BlogProgressBar />
 
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 md:px-8 relative">
