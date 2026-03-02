@@ -105,7 +105,6 @@ const Footer = () => {
               © {currentYear} Happy Drains Solutions. All rights reserved.
             </p>
             <p className="text-sm text-muted-foreground flex items-center gap-1">
-              Made with <Heart className="w-4 h-4 text-red-500 fill-red-500" /> by the ClearFlow Team
             </p>
           </div>
         </div>
