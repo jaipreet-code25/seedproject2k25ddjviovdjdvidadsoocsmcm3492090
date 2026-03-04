@@ -34,6 +34,9 @@ const CustomCursor = () => {
   const history = useRef<{ x: number; y: number }[]>([]);
   const visible = useRef(false);
   const animFrame = useRef<number>();
+  const lastMoveTime = useRef<number>(0);
+  const IDLE_DELAY = 1200;   // ms before fade starts
+  const FADE_DURATION = 600; // ms to fully fade out
 
   useEffect(() => {
     const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
@@ -41,6 +44,7 @@ const CustomCursor = () => {
 
     const onMouseMove = (e: MouseEvent) => {
       const pos = { x: e.clientX, y: e.clientY };
+      lastMoveTime.current = performance.now();
       if (!visible.current) {
         // Pre-fill history so trail starts at cursor, not origin
         history.current = Array(HISTORY).fill(pos).map(() => ({ ...pos }));
@@ -83,7 +87,9 @@ const CustomCursor = () => {
           if (!dot) continue;
           const pos = sampled[i] ?? sampled[sampled.length - 1] ?? h[h.length - 1];
           const size = Math.max(2, 18 - i * 0.85);
-          dot.style.opacity = visible.current ? String(Math.max(0, 1 - i * 0.052)) : "0";
+          const idle = performance.now() - lastMoveTime.current;
+          const idleFade = idle < IDLE_DELAY ? 1 : Math.max(0, 1 - (idle - IDLE_DELAY) / FADE_DURATION);
+          dot.style.opacity = visible.current ? String(Math.max(0, 1 - i * 0.052) * idleFade) : "0";
           dot.style.width = `${size}px`;
           dot.style.height = `${size}px`;
           dot.style.transform = `translate(${pos.x - size / 2}px, ${pos.y - size / 2}px)`;
