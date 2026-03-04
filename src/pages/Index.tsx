@@ -11,12 +11,12 @@ import SectionProgressDivider from "@/components/SectionProgressDivider";
 const values = [
   {
     icon: Pickaxe,
-    title: "Skilled Workers Required",
+    title: "Skilled Workers Required to Clean",
     description: "Street drains can only be cleaned by skilled workers."
   },
   {
     icon: HandCoins,
-    title: "Not Affordable",
+    title: "Not Affordable to Clean",
     description: " Street drains are rarely cleaned as it is expensive."
   },
   {
