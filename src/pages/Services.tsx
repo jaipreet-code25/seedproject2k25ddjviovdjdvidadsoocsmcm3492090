@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Droplets, Shield, CheckCircle, Instagram, Twitter, Wrench, Recycle, ChevronsLeftRight, Landmark, Link2Off } from "lucide-react";
-import productViews from "@/assets/Screenshot 2025-12-28 164951_o1.jpg";
+import productViews from "@/assets/model-design-3.png";
 import partsViews from "@/assets/Screenshot 2025-12-28 164951_o1.jpg";
 import SectionProgressDivider from "@/components/SectionProgressDivider";
 
@@ -105,7 +105,7 @@ const Services = () => {
                 </ul>
               </div>
               <img 
-                src={productViews} 
+                src={partsViews} 
                 alt="ClearFlow product design" 
                 className="w-full rounded-lg shadow-lg"
               />
@@ -131,12 +131,17 @@ const Services = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  The ClearFlow features a clever mesh system that sits inside your drain. 
-                  Water flows through easily, but dust, leaves, and debris get caught in the 
-                  removable mesh compartment. When it's full, just lift it out, empty it, and pop it back in!
+                  HDS ClearFlow features a clever mesh system that sits inside your drain. 
+                  Water flows through easily, but refuse, leaves, and debris get caught in the 
+                  removable mesh compartment. It uses a Turn Buckle Mechanism to make sure it
+                  fits in drains of different sizes. Using opposite threadings, as the central
+                  Turn Buckle Housing is rotated, the Turn Buckle Shafts move out on either
+                  side. This changes the length of ClearFlow to fit tightly in any drain by
+                  exerting a strong outward force on the drain walls. When it's full, just 
+                  lift it out, empty it, and pop it back in!
                 </p>
                 <ul className="space-y-3">
-                  {["Built-in mesh catches all debris", "Removable compartment for easy cleaning", "No tools or professionals needed", "Prevents clogging and waterlogging"].map((item, i) => (
+                  {["Built-in mesh catches all debris", "Turn Buckle Mechanism", "Can fit in all drains", "Prevents clogging and waterlogging"].map((item, i) => (
                     <li key={i} className="flex items-center gap-3">
                       <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                       <span>{item}</span>
