@@ -1,11 +1,23 @@
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Droplets, Shield, CheckCircle, Instagram, Twitter, Wrench, Recycle } from "lucide-react";
+import { Droplets, Shield, CheckCircle, Instagram, Twitter, Wrench, Recycle, ChevronsLeftRight, Landmark } from "lucide-react";
 import productViews from "@/assets/Screenshot 2025-12-28 164951_o1.jpg";
 import SectionProgressDivider from "@/components/SectionProgressDivider";
 
 const productFeatures = [
+  {
+    icon: ChevronsLeftRight,
+    title: "Adjustable",
+    description: "Made to cater to India's wide range of drain designs and sizes.",
+    features: ["Adjustable Length", "Same device can fit any drain", "Perfect for India's drains"]
+  },
+  {
+    icon: Landmark,
+    title: "Affordable",
+    description: "Available in low-cost material to cater to buyers on a budget.",
+    features: ["3D-Printed", "Made of low-cost materials", "Low-cost solution"]
+  },
   {
     icon: Droplets,
     title: "Smart Water Flow",
@@ -20,7 +32,7 @@ const productFeatures = [
   },
   {
     icon: Wrench,
-    title: "Easy DIY Maintenance",
+    title: "Easy DIY Cleaning",
     description: "Simply remove the mesh, empty the debris, and put it back. No tools needed.",
     features: ["No professional help needed", "Quick 2-minute cleaning", "Reusable mesh"]
   },
