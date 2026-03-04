@@ -36,7 +36,7 @@ const features = [
   {
     icon: Droplets,
     title: "Mesh Debris Collection",
-    description: "Built-in mesh catches leaves, dust, and debris while letting water flow through freely."
+    description: "Built-in mesh catches leaves, refuse, and debris while letting water flow through freely."
   },
 ];
 
@@ -142,7 +142,7 @@ const Index = () => {
                 The <span className="text-primary">ClearFlow</span> System
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                HDS ClearFlow features a mesh that catches the dust, leaves, and debris 
+                HDS ClearFlow features a mesh that catches the refuse, leaves, and debris 
                 that would normally clog street drains. Water flows through freely, while everything else 
                 gets collected in the mesh which you can easily empty yourself.
               </p>
