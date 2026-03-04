@@ -38,7 +38,7 @@ const CustomCursor = () => {
   const lastMoveTime = useRef<number>(0);
   const TAIL_FADE_DELAY = 100;    // ms before the very tip of the tail starts fading
   const TAIL_FADE_STAGGER = 40;   // extra ms delay per dot closer to head
-  const TAIL_FADE_DURATION = 300; // ms each dot takes to fade once it starts
+  const TAIL_FADE_DURATION = 250; // ms each dot takes to fade once it starts
 
   useEffect(() => {
     const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
