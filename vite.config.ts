@@ -2,16 +2,6 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
-'use client';
-
-import useCanvasCursor from '@/hooks/use-canvasCursor';
-
-const CanvasCursor = () => {
-  useCanvasCursor();
-
-  return <canvas className='pointer-events-none fixed inset-0' id='canvas' />;
-};
-export default CanvasCursor;
 
 
 // https://vitejs.dev/config/
