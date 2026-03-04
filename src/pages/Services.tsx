@@ -88,7 +88,7 @@ const Services = () => {
             className="card-glass p-8 rounded-lg mb-16"
           >
             <h2 className="text-3xl font-bold mb-6 text-center">
-              <span className="text-primary">Components</span>
+              What are its <span className="text-primary">Components</span>?
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
@@ -170,7 +170,7 @@ const Services = () => {
             className="card-glass p-8 rounded-lg mb-16"
           >
             <h2 className="text-3xl font-bold mb-6 text-center">
-              <span className="text-primary">Installation</span>
+              How to <span className="text-primary">Install</span>?
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
