@@ -68,7 +68,7 @@ const About = () => {
               <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 Happy Drains Solutions has created HDS ClearFlow, a simple, effective drainage device 
-                that anyone can use. HDS ClearFlow features a built-in mesh that collects dust, leaves, 
+                that anyone can use. HDS ClearFlow features a built-in mesh that collects refuse, leaves, 
                 and debris preventing clogs from worsening and making cleaning of drains very easy.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
