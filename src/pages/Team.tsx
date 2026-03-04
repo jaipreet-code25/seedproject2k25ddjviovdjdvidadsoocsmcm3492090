@@ -44,7 +44,7 @@ const Team = () => {
               Meet the <span className="text-primary">Team</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              The people building and testing the ClearFlow device.
+              The people behind HDS.
             </p>
           </motion.div>
         </div>
