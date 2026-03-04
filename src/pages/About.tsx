@@ -8,7 +8,7 @@ const values = [
   {
     icon: Target,
     title: "Simple Solutions",
-    description: "We design products that are easy to use—no complicated installations or professional help needed."
+    description: "We provide simple solutions to the pressing problem of urban waterlogging."
   },
   {
     icon: Heart,
@@ -18,7 +18,7 @@ const values = [
   {
     icon: CheckCircle,
     title: "Durable",
-    description: "Built with quality materials to withstand years of use."
+    description: "Built to last inside of drains."
   },
   {
     icon: Lightbulb,
@@ -46,8 +46,8 @@ const About = () => {
               About <span className="text-primary">Us</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              We design and build innovative drainage devices that prevent clogging 
-              using simple mesh-based debris collection technology.
+              HDS is dedicated to solving the problem of urban waterlogging. We have created HDS ClearFlow 
+              to empower everyone to make their cities waterlogging-free.
             </p>
           </motion.div>
         </div>
@@ -67,13 +67,14 @@ const About = () => {
             >
               <h2 className="text-4xl font-bold mb-6">Our Mission</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Happy Drains Solutions creates simple, effective drainage devices that anyone can use. 
-                Our ClearFlow features a built-in mesh that collects dust, leaves, and debris—
-                preventing clogs before they happen.
+                Happy Drains Solutions has created HDS ClearFlow, a simple, effective drainage device 
+                that anyone can use. HDS ClearFlow features a built-in mesh that collects refuse, leaves, 
+                and debris preventing clogs from worsening and making cleaning of drains very easy.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 We believe preventing drain clogs shouldn't require expensive professional help. 
-                Our device is easy to install, easy to clean, and built to last.
+                Our device is easy to install, easy to clean, and built to last. It can be used 
+                even by a lay man.
               </p>
             </motion.div>
             <motion.div
@@ -86,8 +87,10 @@ const About = () => {
               <h3 className="text-2xl font-bold mb-4 text-primary">Our Vision</h3>
               <p className="text-muted-foreground leading-relaxed">
                 To create a future where every street, every neighborhood, and every city 
-                in India has access to efficient, sustainable drainage solutions that prevent 
-                flooding and improve urban living conditions.
+                in India has access to HDS ClearFlow to prevent waterlogging and improve 
+                urban living conditions. We hope for a future where cleaners do not have to 
+                enter the extremely unhygienic and toxic environment inside drains. We hope to 
+                empower the people to take the matter of efficient drainage into their own hands.
               </p>
             </motion.div>
           </div>

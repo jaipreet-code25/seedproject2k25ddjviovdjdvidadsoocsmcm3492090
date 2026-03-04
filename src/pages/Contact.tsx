@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, Instagram, Send, MessageSquare } from "lucide-react";
+import { Mail, MapPin, Instagram, Send, MessageSquare, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -45,24 +45,30 @@ const contactInfo = [
     value: "India",
     href: "#",
   },
+  {
+    icon: Twitter,
+    label: "X",
+    value: "@happy_drain",
+    href: "https://x.com/happy_drain",
+  },
 ];
 
 const faqs = [
   {
-    question: "What is ClearFlow?",
-    answer: "ClearFlow is a simple drainage device with a built-in mesh that catches dust, leaves, and debris. Water flows through freely while the mesh collects everything else in a removable compartment."
+    question: "What is HDS ClearFlow?",
+    answer: "HDS ClearFlow is a simple drainage device with a mesh that catches refuse, leaves, and debris. Water flows through freely while the mesh collects everything else. The mesh can be removed easily."
   },
   {
     question: "How does the mesh system work?",
-    answer: "The mesh sits inside the drain and lets water pass through while trapping debris. When it gets full, simply lift out the compartment, empty it, and put it back. No tools needed!"
+    answer: "The mesh sits inside the drain and lets water pass through while trapping debris. When it gets full, simply lift out ClearFlow along with the mesh, empty it, and put it back. No tools needed!"
   },
   {
     question: "How long does the mesh last?",
-    answer: "The mesh is made from durable materials and is designed to last for years with proper care. Replacement meshes are also available."
+    answer: "The mesh is made from strong materials and is designed to last for months with proper care. Meshes can be replaced easily."
   },
   {
-    question: "Where can I buy ClearFlow?",
-    answer: "Contact us through email or Instagram and we'll help you get your ClearFlow!"
+    question: "How can I learn more about HDS ClearFlow?",
+    answer: "Contact us through email or Instagram and we'll help you solve your doubts about HDS ClearFlow!"
   }
 ];
 

@@ -106,7 +106,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6, delay: 1 }}
           className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
         >
-          A simple mesh-based device that catches debris and keeps your drains clog-free
+         Clogged drains? Not anymore!
         </motion.p>
 
         <motion.div
