@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { Droplets, Shield, CheckCircle, Instagram, Twitter, Wrench, Recycle, ChevronsLeftRight, Landmark, Link2Off } from "lucide-react";
 import productViews from "@/assets/model-design-3.png";
 import partsViews from "@/assets/Screenshot 2025-12-28 164951_o1.jpg";
+import ledgeViews from "@/assets/model-design-6.png";
 import SectionProgressDivider from "@/components/SectionProgressDivider";
 
 const productFeatures = [
@@ -136,9 +137,7 @@ const Services = () => {
                   removable mesh compartment. It uses a Turn Buckle Mechanism to make sure it
                   fits in drains of different sizes. Using opposite threadings, as the central
                   Turn Buckle Housing is rotated, the Turn Buckle Shafts move out on either
-                  side. This changes the length of ClearFlow to fit tightly in any drain by
-                  exerting a strong outward force on the drain walls. When it's full, just 
-                  lift it out, empty it, and pop it back in!
+                  side. When it's full, just lift it out, empty it, and pop it back in!
                 </p>
                 <ul className="space-y-3">
                   {["Built-in mesh catches all debris", "Turn Buckle Mechanism", "Can fit in all drains", "Prevents clogging and waterlogging"].map((item, i) => (
@@ -171,17 +170,20 @@ const Services = () => {
             className="card-glass p-8 rounded-lg mb-16"
           >
             <h2 className="text-3xl font-bold mb-6 text-center">
-              How It <span className="text-primary">Works</span>
+              <span className="text-primary">Installation</span>
             </h2>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                  The ClearFlow features a clever mesh system that sits inside your drain. 
-                  Water flows through easily, but dust, leaves, and debris get caught in the 
-                  removable mesh compartment. When it's full, just lift it out, empty it, and pop it back in!
+                  The Turn Buckle Mechanism allows for easy 2-minute installation in 
+                  drains of all sizes within a certain limit. By turning the central housing,
+                  each Turn Buckle Shaft moves outwards, increasinging the overall length of 
+                  ClearFlow. By turning the housing when the shafts and terminal hooks have made
+                  contact with the drain walls, a strong outward force on the walls due to the 
+                  internal threadings, ensures a tight fit.
                 </p>
                 <ul className="space-y-3">
-                  {["Built-in mesh catches all debris", "Removable compartment for easy cleaning", "No tools or professionals needed", "Prevents clogging and waterlogging"].map((item, i) => (
+                  {["Terminal Hooks have a portrusion to sit on drain ledge where grate is placed", "Turn Buckle ensures a tight fit", "Easy installation", "No professionals required"].map((item, i) => (
                     <li key={i} className="flex items-center gap-3">
                       <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
                       <span>{item}</span>
@@ -190,7 +192,7 @@ const Services = () => {
                 </ul>
               </div>
               <img 
-                src={productViews} 
+                src={ledgeViews} 
                 alt="ClearFlow product design" 
                 className="w-full rounded-lg shadow-lg"
               />
