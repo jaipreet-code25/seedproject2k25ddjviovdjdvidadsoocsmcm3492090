@@ -33,6 +33,7 @@ const CustomCursor = () => {
   // Ring buffer of actual mouse positions
   const history = useRef<{ x: number; y: number }[]>([]);
   const visible = useRef(false);
+  const isPointer = useRef(false);
   const animFrame = useRef<number>();
   const lastMoveTime = useRef<number>(0);
   const TAIL_FADE_DELAY = 100;    // ms before the very tip of the tail starts fading
@@ -46,6 +47,8 @@ const CustomCursor = () => {
     const onMouseMove = (e: MouseEvent) => {
       const pos = { x: e.clientX, y: e.clientY };
       lastMoveTime.current = performance.now();
+      const target = e.target as HTMLElement;
+      isPointer.current = !!target.closest('a, button, [role="button"], input, textarea, select, label, [onclick], .cursor-pointer');
       if (!visible.current) {
         // Pre-fill history so trail starts at cursor, not origin
         history.current = Array(HISTORY).fill(pos).map(() => ({ ...pos }));
@@ -87,7 +90,9 @@ const CustomCursor = () => {
           const dot = dotsRef.current[i];
           if (!dot) continue;
           const pos = sampled[i] ?? sampled[sampled.length - 1] ?? h[h.length - 1];
-          const size = Math.max(2, 18 - i * 0.85);
+          const size = i === 0
+            ? (isPointer.current ? 16 : 11)
+            : Math.max(2, 15 - i * 0.85);
           const idle = performance.now() - lastMoveTime.current;
           let idleFade: number;
           if (i === 0) {
