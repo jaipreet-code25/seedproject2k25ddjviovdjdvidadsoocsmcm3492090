@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Droplets, Shield, CheckCircle, Instagram, Twitter, Wrench, Recycle, ChevronsLeftRight, Landmark, Link2Off } from "lucide-react";
 import productViews from "@/assets/Screenshot 2025-12-28 164951_o1.jpg";
+import partsViews from "@/assets/Screenshot 2025-12-28 164951_o1.jpg";
 import SectionProgressDivider from "@/components/SectionProgressDivider";
 
 const productFeatures = [
@@ -70,6 +71,85 @@ const Services = () => {
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               A simple, effective device that keeps street drains of all sizes clog-free using a debris collection mesh.
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <SectionProgressDivider />
+
+      {/* Product Showcase */}
+      <section className="py-16 px-4 md:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="card-glass p-8 rounded-lg mb-16"
+          >
+            <h2 className="text-3xl font-bold mb-6 text-center">
+              What's in the <span className="text-primary">Box</span>?
+            </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                  HDS ClearFlow ships with two identical units, which together form a single
+                  anti-clogging and anti-waterlogging device. Each unit has 5 parts: 
+                </p>
+                <ul className="space-y-3">
+                  {["Turn Buckle Housing: provides an enclosure for the Turn Buckle Shafts", "Turn Buckle Shafts (2): have opposite threadings and fit into the Turn Buckle Housing", "Terminal Hooks: slot onto the ends of the Turn Buckle Shafts"].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <img 
+                src={productViews} 
+                alt="ClearFlow product design" 
+                className="w-full rounded-lg shadow-lg"
+              />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <SectionProgressDivider />
+
+      {/* Product Showcase */}
+      <section className="py-16 px-4 md:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="card-glass p-8 rounded-lg mb-16"
+          >
+            <h2 className="text-3xl font-bold mb-6 text-center">
+              How It <span className="text-primary">Works</span>
+            </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                  The ClearFlow features a clever mesh system that sits inside your drain. 
+                  Water flows through easily, but dust, leaves, and debris get caught in the 
+                  removable mesh compartment. When it's full, just lift it out, empty it, and pop it back in!
+                </p>
+                <ul className="space-y-3">
+                  {["Built-in mesh catches all debris", "Removable compartment for easy cleaning", "No tools or professionals needed", "Prevents clogging and waterlogging"].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <img 
+                src={productViews} 
+                alt="ClearFlow product design" 
+                className="w-full rounded-lg shadow-lg"
+              />
+            </div>
           </motion.div>
         </div>
       </section>
