@@ -38,8 +38,7 @@ const Index = () => {
               About <span className="text-primary">Happy Drains Solutions</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              We create simple, effective drainage devices. The ClearFlow uses a mesh system to catch 
-              debris before it clogs your drains and leads to flooding.
+              We created HDS ClearFlow, a cost-effective, efficient and long-lasting solution to ensure street drains don't get clogged up.
             </p>
           </motion.div>
 
@@ -86,9 +85,9 @@ const Index = () => {
                 The <span className="text-primary">ClearFlow</span> System
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                The ClearFlow features a built-in mesh that catches all the dust, leaves, and debris 
-                that would normally clog your drains. Water flows through freely, while everything else 
-                gets collected in a removable compartment you can easily empty yourself.
+                HDS ClearFlow features a mesh that catches all the dust, leaves, and debris 
+                that would normally clog street drains. Water flows through freely, while everything else 
+                gets collected in a removable mesh you can easily empty yourself.
               </p>
               <Link to="/services">
                 <Button size="lg" className="gap-2">
@@ -153,8 +152,8 @@ const Index = () => {
               Ready to <span className="text-primary">Get Started?</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Contact us today to discuss your drainage needs and discover how the ClearFlow can help 
-              your community stay flood-free.
+              Contact us today if you have any queries and discover how HDS ClearFlow can help 
+              your locality stay clean, safe and waterlogging-free.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact">
