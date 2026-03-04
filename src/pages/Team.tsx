@@ -17,10 +17,10 @@ interface TeamMember {
 }
 
 const team: TeamMember[] = [
-  { name: "Jaipreet Purkayastha", role: "Product Designer", image: team6Img },
+  { name: "Jaipreet Purkayastha", role: "Product Design", image: team6Img },
   { name: "Tejas Singh", role: "Operations", image: team5Img },
-  { name: "Sharanyo Chakraborty", role: "Marketing", image: team4Img },
   { name: "Abhinava Bandopadhyay", role: "Product Development", image: team3Img },
+  { name: "Sharanyo Chakraborty", role: "Marketing", image: team4Img },
   { name: "Ayushman Singh", role: "Graphic Design", image: team2Img },
   { name: "Samaroha Bhattacharyya", role: "Web Development", image: team1Img },
 ];
