@@ -5,7 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
 import { ArrowRight, Droplets, Shield, Image, Pickaxe, HandCoins, TriangleAlert, Waves, CopyX } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import productViews from "@/assets/Screenshot 2025-12-28 164951_o1.jpg";
+import productViews from "@/assets/clearflow-blog-4.png";
 import SectionProgressDivider from "@/components/SectionProgressDivider";
 
 const values = [
