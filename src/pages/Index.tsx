@@ -105,7 +105,7 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-4xl font-bold text-center mb-12"
           >
-            Our <span className="text-primary">Values</span>
+            <span className="text-primary">Problems</span> faced in Drainage
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
