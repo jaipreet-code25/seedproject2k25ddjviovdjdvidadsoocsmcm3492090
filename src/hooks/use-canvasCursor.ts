@@ -5,33 +5,33 @@ import { useEffect } from 'react';
 const SPACING = 5;
 const HISTORY_MAX = 800;
 
-// White head → sky blue → royal blue → near-black tail
+// Bright yellow head → amber → dark yellow → near-black tail
 const TRAIL_COLORS = [
-  '#ffffff',
-  '#e0f2fe',
-  '#bae6fd',
-  '#7dd3fc',
-  '#38bdf8',
-  '#0ea5e9',
-  '#0284c7',
-  '#0369a1',
-  '#1d4ed8',
-  '#1e40af',
-  '#1e3a8a',
-  '#172554',
-  '#0f172a',
-  '#0a1128',
-  '#060d1a',
-  '#03070f',
-  '#01030a',
-  '#000510',
-  '#00020a',
-  '#000105',
-  '#000000',
-  '#000000',
-  '#000000',
-  '#000000',
-  '#000000',
+  '#ffff00',
+  '#fffc00',
+  '#fff700',
+  '#ffef00',
+  '#ffe500',
+  '#ffd900',
+  '#ffcc00',
+  '#ffbf00',
+  '#ffb300',
+  '#ffa500',
+  '#ff9800',
+  '#e68a00',
+  '#cc7a00',
+  '#b36b00',
+  '#995c00',
+  '#804d00',
+  '#663d00',
+  '#4d2e00',
+  '#331f00',
+  '#1a1000',
+  '#0d0800',
+  '#060300',
+  '#030100',
+  '#020100',
+  '#010000',
   '#000000',
   '#000000',
   '#000000',
@@ -140,7 +140,7 @@ const useCanvasCursor = () => {
           // Glow for head and near-head dots
           if (i < 5) {
             ctx.save();
-            ctx.shadowColor = i === 0 ? `rgba(255,255,255,${opacity * 0.7})` : `rgba(14,165,233,${opacity * 0.5})`;
+            ctx.shadowColor = i === 0 ? `rgba(255,255,0,${opacity * 0.7})` : `rgba(255,200,0,${opacity * 0.5})`;
             ctx.shadowBlur = i === 0 ? 6 : 3;
             ctx.beginPath();
             ctx.arc(pos.x, pos.y, radius, 0, Math.PI * 2);
