@@ -64,7 +64,7 @@ const faqs = [
   },
   {
     question: "How long does the mesh last?",
-    answer: "The mesh is made from strong materials and is designed to last for months with proper care. Meshes can be replaced easily."
+    answer: "The mesh is made from strong materials and is designed to last for years with proper care. Meshes can be replaced easily."
   },
   {
     question: "How can I learn more about HDS ClearFlow?",
