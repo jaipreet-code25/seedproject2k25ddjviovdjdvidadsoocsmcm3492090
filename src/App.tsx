@@ -12,7 +12,7 @@ import Team from "./pages/Team";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
-import RippleCursor from "./components/RippleCursor";
+import CanvasCursor from "./components/CanvasCursor";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -30,7 +30,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <RippleCursor />
+      <CanvasCursor />
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
